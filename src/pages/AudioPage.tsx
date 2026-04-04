@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { fetchTikTokVideo } from "@/lib/tiktok-api";
 import { toast } from "sonner";
 import { Music, Headphones, Disc3 } from "lucide-react";
+import youtubeToTiktokImg from "@/assets/youtube-to-tiktok.webp";
 
 const AudioPage = () => {
   const [isLoading, setIsLoading] = useState(false);
