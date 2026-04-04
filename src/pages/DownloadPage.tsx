@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { fetchTikTokVideo } from "@/lib/tiktok-api";
 import { toast } from "sonner";
 import { Download, Zap, Shield, Infinity } from "lucide-react";
+import videoDownloaderImg from "@/assets/video-downloader.webp";
 
 const DownloadPage = () => {
   const [isLoading, setIsLoading] = useState(false);
