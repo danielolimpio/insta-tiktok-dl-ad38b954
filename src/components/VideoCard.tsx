@@ -9,6 +9,9 @@ export interface VideoInfo {
   duration: string;
   size: string;
   thumbnail: string;
+  downloadUrl: string;
+  downloadUrlHd: string;
+  musicUrl: string;
 }
 
 type DownloadState = "idle" | "downloading" | "completed";
