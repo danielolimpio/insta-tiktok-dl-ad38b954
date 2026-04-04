@@ -53,7 +53,17 @@ const AudioPage = () => {
           )}
 
           <section className="mt-16 max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground text-center mb-8">Recursos do Conversor MP3</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-10">
+              <div className="flex justify-center">
+                <img src={youtubeToTiktokImg} alt="Converter TikTok para MP3" className="w-full max-w-xs rounded-2xl" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-foreground mb-4">Recursos do Conversor MP3</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  Extraia o áudio de qualquer vídeo do TikTok e salve em MP3 de alta qualidade. Perfeito para ouvir músicas virais offline.
+                </p>
+              </div>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
                 { icon: Music, title: "Alta Qualidade", desc: "Áudio MP3 com a melhor qualidade disponível." },
