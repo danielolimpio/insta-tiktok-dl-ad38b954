@@ -53,7 +53,17 @@ const DownloadPage = () => {
           )}
 
           <section className="mt-16 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground text-center mb-8">Por que usar o TikDown?</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-12">
+              <div>
+                <h2 className="text-2xl font-bold text-foreground mb-4">Por que usar o TikDown?</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  O TikDown é a forma mais rápida e segura de baixar vídeos do TikTok sem marca d'água. Sem cadastro, sem instalação, sem limites. Basta colar o link e baixar!
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <img src={videoDownloaderImg} alt="Download de vídeos TikTok" className="w-full max-w-xs rounded-2xl" />
+              </div>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { icon: Zap, title: "Ultra Rápido", desc: "Downloads instantâneos sem espera." },
