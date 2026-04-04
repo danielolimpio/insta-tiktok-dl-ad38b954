@@ -21,19 +21,53 @@ export function VideoCard({ video }: { video: VideoInfo }) {
   const [state, setState] = useState<DownloadState>("idle");
   const [progress, setProgress] = useState(0);
 
-  const simulateDownload = () => {
+  const handleDownload = (url: string, filename: string) => {
     setState("downloading");
     setProgress(0);
+
     const interval = setInterval(() => {
       setProgress((p) => {
-        if (p >= 100) {
+        if (p >= 90) {
           clearInterval(interval);
-          setState("completed");
-          return 100;
+          return 90;
         }
         return p + Math.random() * 15;
       });
-    }, 300);
+    }, 200);
+
+    fetch(url)
+      .then((res) => {
+        if (!res.ok) throw new Error("Download falhou");
+        return res.blob();
+      })
+      .then((blob) => {
+        clearInterval(interval);
+        setProgress(100);
+        setState("completed");
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(a.href);
+      })
+      .catch(() => {
+        clearInterval(interval);
+        // Fallback: open in new tab
+        window.open(url, "_blank");
+        setProgress(100);
+        setState("completed");
+      });
+  };
+
+  const startDownload = () => {
+    const isHd = quality === "1080p";
+    const isMp3 = quality === "mp3";
+    const url = isMp3 ? video.musicUrl : isHd ? video.downloadUrlHd : video.downloadUrl;
+    const ext = isMp3 ? "mp3" : "mp4";
+    const filename = `${video.author}_${video.id}.${ext}`;
+    handleDownload(url, filename);
   };
 
   return (
