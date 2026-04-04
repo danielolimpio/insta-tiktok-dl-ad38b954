@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { fetchTikTokVideo } from "@/lib/tiktok-api";
 import { toast } from "sonner";
 import { MonitorPlay, Film, Sparkles } from "lucide-react";
+import videoCreatorImg from "@/assets/video-creator.webp";
 
 const VideoPage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -69,12 +70,19 @@ const VideoPage = () => {
           </section>
 
           <section className="mt-16 max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground text-center mb-6">Como Baixar Vídeo MP4</h2>
-            <ol className="space-y-4 text-muted-foreground">
-              <li className="flex gap-3"><span className="text-tiktok-cyan font-bold text-lg">1.</span><span>Abra o TikTok e copie o link do vídeo desejado.</span></li>
-              <li className="flex gap-3"><span className="text-tiktok-cyan font-bold text-lg">2.</span><span>Cole o link no campo acima e clique em "Baixar Agora".</span></li>
-              <li className="flex gap-3"><span className="text-tiktok-cyan font-bold text-lg">3.</span><span>Escolha a qualidade (1080p, 720p ou 480p) e faça o download.</span></li>
-            </ol>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-2xl font-bold text-foreground mb-6">Como Baixar Vídeo MP4</h2>
+                <ol className="space-y-4 text-muted-foreground">
+                  <li className="flex gap-3"><span className="text-tiktok-cyan font-bold text-lg">1.</span><span>Abra o TikTok e copie o link do vídeo desejado.</span></li>
+                  <li className="flex gap-3"><span className="text-tiktok-cyan font-bold text-lg">2.</span><span>Cole o link no campo acima e clique em "Baixar Agora".</span></li>
+                  <li className="flex gap-3"><span className="text-tiktok-cyan font-bold text-lg">3.</span><span>Escolha a qualidade (1080p, 720p ou 480p) e faça o download.</span></li>
+                </ol>
+              </div>
+              <div className="flex justify-center">
+                <img src={videoCreatorImg} alt="Baixar vídeo MP4 do TikTok" className="w-full max-w-xs rounded-2xl" />
+              </div>
+            </div>
           </section>
         </main>
         <Footer />

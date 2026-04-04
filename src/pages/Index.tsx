@@ -6,6 +6,7 @@ import { VideoCard, VideoInfo } from "@/components/VideoCard";
 import { FeatureCards } from "@/components/FeatureCards";
 import { HowItWorks } from "@/components/HowItWorks";
 import { FAQSection } from "@/components/FAQSection";
+import { AdSenseContent } from "@/components/AdSenseContent";
 import { Footer } from "@/components/Footer";
 import { fetchTikTokVideo } from "@/lib/tiktok-api";
 import { toast } from "sonner";
@@ -33,7 +34,6 @@ const Index = () => {
       <AppSidebar />
 
       <div className="flex-1 lg:ml-[280px] flex flex-col">
-        {/* Main scrollable content */}
         <main className="flex-1 px-4 sm:px-8 py-8">
           {/* Hero */}
           <motion.div
@@ -82,6 +82,11 @@ const Index = () => {
           {/* FAQ */}
           <div className="mt-20">
             <FAQSection />
+          </div>
+
+          {/* Rich Content for AdSense */}
+          <div className="mt-20">
+            <AdSenseContent />
           </div>
         </main>
 

@@ -10,6 +10,10 @@ import VideoPage from "./pages/VideoPage.tsx";
 import AudioPage from "./pages/AudioPage.tsx";
 import SettingsPage from "./pages/SettingsPage.tsx";
 import HelpPage from "./pages/HelpPage.tsx";
+import PrivacyPage from "./pages/PrivacyPage.tsx";
+import TermsPage from "./pages/TermsPage.tsx";
+import AboutPage from "./pages/AboutPage.tsx";
+import ContactPage from "./pages/ContactPage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +30,10 @@ const App = () => (
           <Route path="/audio" element={<AudioPage />} />
           <Route path="/configuracoes" element={<SettingsPage />} />
           <Route path="/ajuda" element={<HelpPage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/privacidade" element={<PrivacyPage />} />
+          <Route path="/termos" element={<TermsPage />} />
+          <Route path="/sobre" element={<AboutPage />} />
+          <Route path="/contato" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

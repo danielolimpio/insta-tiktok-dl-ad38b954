@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function Footer() {
   return (
     <footer className="bg-tiktok-dark text-secondary-foreground mt-20">
@@ -8,15 +10,18 @@ export function Footer() {
             <p className="text-xs text-muted-foreground mt-1">Sem Marca d'Água • Grátis • Ilimitado</p>
           </div>
           <nav className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-tiktok-cyan transition-colors">Termos de Uso</a>
-            <a href="#" className="hover:text-tiktok-cyan transition-colors">Privacidade</a>
-            <a href="#" className="hover:text-tiktok-cyan transition-colors">Contato</a>
-            <a href="#" className="hover:text-tiktok-cyan transition-colors">Sobre</a>
+            <Link to="/termos" className="hover:text-tiktok-cyan transition-colors">Termos de Uso</Link>
+            <Link to="/privacidade" className="hover:text-tiktok-cyan transition-colors">Privacidade</Link>
+            <Link to="/contato" className="hover:text-tiktok-cyan transition-colors">Contato</Link>
+            <Link to="/sobre" className="hover:text-tiktok-cyan transition-colors">Sobre</Link>
           </nav>
         </div>
         <div className="mt-8 pt-6 border-t border-sidebar-border text-center">
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} baixarvideostiktok.com — Todos os direitos reservados.
+          </p>
+          <p className="text-xs text-muted-foreground mt-2">
+            Não somos afiliados ao TikTok, ByteDance ou Douyin.
           </p>
         </div>
       </div>
