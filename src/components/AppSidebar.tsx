@@ -1,18 +1,21 @@
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Home, Download, Video, Music, Settings, HelpCircle, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
-  { label: "Início", icon: Home, active: true },
-  { label: "Download", icon: Download },
-  { label: "Vídeo", icon: Video },
-  { label: "Áudio/MP3", icon: Music },
-  { label: "Configurações", icon: Settings },
-  { label: "Ajuda e Suporte", icon: HelpCircle },
+  { label: "Início", icon: Home, path: "/" },
+  { label: "Download", icon: Download, path: "/download" },
+  { label: "Vídeo", icon: Video, path: "/video" },
+  { label: "Áudio/MP3", icon: Music, path: "/audio" },
+  { label: "Configurações", icon: Settings, path: "/configuracoes" },
+  { label: "Ajuda e Suporte", icon: HelpCircle, path: "/ajuda" },
 ];
 
 export function AppSidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const sidebar = (
     <div className="flex flex-col h-full bg-tiktok-black text-sidebar-foreground">
@@ -30,8 +33,9 @@ export function AppSidebar() {
         {navItems.map((item) => (
           <button
             key={item.label}
+            onClick={() => { navigate(item.path); setMobileOpen(false); }}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
-              item.active
+              location.pathname === item.path
                 ? "bg-tiktok-cyan/15 text-tiktok-cyan"
                 : "text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground"
             }`}

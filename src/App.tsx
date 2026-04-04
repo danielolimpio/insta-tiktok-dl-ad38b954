@@ -5,6 +5,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import DownloadPage from "./pages/DownloadPage.tsx";
+import VideoPage from "./pages/VideoPage.tsx";
+import AudioPage from "./pages/AudioPage.tsx";
+import SettingsPage from "./pages/SettingsPage.tsx";
+import HelpPage from "./pages/HelpPage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +21,11 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/download" element={<DownloadPage />} />
+          <Route path="/video" element={<VideoPage />} />
+          <Route path="/audio" element={<AudioPage />} />
+          <Route path="/configuracoes" element={<SettingsPage />} />
+          <Route path="/ajuda" element={<HelpPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
