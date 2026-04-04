@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { fetchTikTokVideo } from "@/lib/tiktok-api";
 import { toast } from "sonner";
 import { MonitorPlay, Film, Sparkles } from "lucide-react";
+import videoCreatorImg from "@/assets/video-creator.webp";
 
 const VideoPage = () => {
   const [isLoading, setIsLoading] = useState(false);
