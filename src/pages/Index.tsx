@@ -1,16 +1,117 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { AppSidebar } from "@/components/AppSidebar";
+import { URLInput } from "@/components/URLInput";
+import { VideoCard, VideoInfo } from "@/components/VideoCard";
+import { FeatureCards } from "@/components/FeatureCards";
+import { HowItWorks } from "@/components/HowItWorks";
+import { FAQSection } from "@/components/FAQSection";
+import { Footer } from "@/components/Footer";
+import { toast } from "sonner";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const mockVideos: VideoInfo[] = [
+  {
+    id: "1",
+    title: "Como fazer $1 bilhão no seu primeiro ano! 🚀",
+    author: "empreendedor_br",
+    duration: "10:44",
+    size: "256MB",
+    thumbnail: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=280&h=180&fit=crop",
+  },
+  {
+    id: "2",
+    title: "Receita fácil de bolo de chocolate 🍫",
+    author: "cozinha_facil",
+    duration: "3:22",
+    size: "89MB",
+    thumbnail: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=280&h=180&fit=crop",
+  },
+  {
+    id: "3",
+    title: "Dança viral que todo mundo está fazendo 💃",
+    author: "dancas_br",
+    duration: "0:30",
+    size: "12MB",
+    thumbnail: "https://images.unsplash.com/photo-1547153760-18fc86324498?w=280&h=180&fit=crop",
+  },
+];
+
+const Index = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [videos, setVideos] = useState<VideoInfo[]>([]);
+
+  const handleSubmit = (url: string) => {
+    setIsLoading(true);
+    setVideos([]);
+    // Simulate API call
+    setTimeout(() => {
+      setIsLoading(false);
+      setVideos(mockVideos);
+      toast.success("Vídeo pronto para download!");
+    }, 2000);
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen flex bg-background">
+      <AppSidebar />
+
+      <div className="flex-1 lg:ml-[280px] flex flex-col">
+        {/* Main scrollable content */}
+        <main className="flex-1 px-4 sm:px-8 py-8">
+          {/* Hero */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center max-w-3xl mx-auto mb-10 pt-8 lg:pt-0"
+          >
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground leading-tight">
+              Baixar Vídeo do TikTok{" "}
+              <span className="text-gradient-tiktok">Sem Marca d'Água</span>
+            </h1>
+            <p className="text-muted-foreground mt-3 text-base max-w-xl mx-auto">
+              A melhor ferramenta grátis para baixar vídeos do TikTok em MP4 e MP3. Rápido, fácil e sem limites!
+            </p>
+          </motion.div>
+
+          {/* URL Input */}
+          <URLInput onSubmit={handleSubmit} isLoading={isLoading} />
+
+          {/* Features */}
+          <div className="mt-12">
+            <FeatureCards />
+          </div>
+
+          {/* Video Results */}
+          {videos.length > 0 && (
+            <motion.section
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="mt-12 max-w-3xl mx-auto"
+            >
+              <h2 className="text-xl font-bold text-foreground mb-4">Vídeos Encontrados</h2>
+              <div className="space-y-3">
+                {videos.map((v) => (
+                  <VideoCard key={v.id} video={v} />
+                ))}
+              </div>
+            </motion.section>
+          )}
+
+          {/* How It Works */}
+          <div className="mt-20">
+            <HowItWorks />
+          </div>
+
+          {/* FAQ */}
+          <div className="mt-20">
+            <FAQSection />
+          </div>
+        </main>
+
+        <Footer />
+      </div>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
