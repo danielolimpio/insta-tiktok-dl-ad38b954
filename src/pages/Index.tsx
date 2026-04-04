@@ -7,48 +7,25 @@ import { FeatureCards } from "@/components/FeatureCards";
 import { HowItWorks } from "@/components/HowItWorks";
 import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/Footer";
+import { fetchTikTokVideo } from "@/lib/tiktok-api";
 import { toast } from "sonner";
-
-const mockVideos: VideoInfo[] = [
-  {
-    id: "1",
-    title: "Como fazer $1 bilhão no seu primeiro ano! 🚀",
-    author: "empreendedor_br",
-    duration: "10:44",
-    size: "256MB",
-    thumbnail: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=280&h=180&fit=crop",
-  },
-  {
-    id: "2",
-    title: "Receita fácil de bolo de chocolate 🍫",
-    author: "cozinha_facil",
-    duration: "3:22",
-    size: "89MB",
-    thumbnail: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=280&h=180&fit=crop",
-  },
-  {
-    id: "3",
-    title: "Dança viral que todo mundo está fazendo 💃",
-    author: "dancas_br",
-    duration: "0:30",
-    size: "12MB",
-    thumbnail: "https://images.unsplash.com/photo-1547153760-18fc86324498?w=280&h=180&fit=crop",
-  },
-];
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [videos, setVideos] = useState<VideoInfo[]>([]);
 
-  const handleSubmit = (url: string) => {
+  const handleSubmit = async (url: string) => {
     setIsLoading(true);
     setVideos([]);
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false);
-      setVideos(mockVideos);
+    try {
+      const videoData = await fetchTikTokVideo(url);
+      setVideos([videoData]);
       toast.success("Vídeo pronto para download!");
-    }, 2000);
+    } catch (error: any) {
+      toast.error(error.message || "Erro ao buscar o vídeo. Tente novamente.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
