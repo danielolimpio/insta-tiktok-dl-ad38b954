@@ -10,6 +10,18 @@ export interface TikTokVideoData {
   musicUrl: string;
 }
 
+const TIKWM_ORIGIN = "https://www.tikwm.com";
+
+function resolveTikWmUrl(url?: string) {
+  if (!url) return "";
+
+  try {
+    return new URL(url, TIKWM_ORIGIN).toString();
+  } catch {
+    return url;
+  }
+}
+
 export async function fetchTikTokVideo(url: string): Promise<TikTokVideoData> {
   const response = await fetch("https://www.tikwm.com/api/", {
     method: "POST",
@@ -50,8 +62,8 @@ export async function fetchTikTokVideo(url: string): Promise<TikTokVideoData> {
     duration: durationStr,
     size: sizeMB,
     thumbnail: d.origin_cover || d.cover || "",
-    downloadUrl: d.play || "",
-    downloadUrlHd: d.hdplay || d.play || "",
-    musicUrl: d.music || "",
+    downloadUrl: resolveTikWmUrl(d.play),
+    downloadUrlHd: resolveTikWmUrl(d.hdplay || d.play),
+    musicUrl: resolveTikWmUrl(d.music),
   };
 }
