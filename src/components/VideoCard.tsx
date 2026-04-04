@@ -121,13 +121,16 @@ export function VideoCard({ video }: { video: VideoInfo }) {
               <option value="mp3">MP3</option>
             </select>
             <button
-              onClick={simulateDownload}
+              onClick={startDownload}
               className="h-9 px-4 rounded-lg bg-primary text-primary-foreground text-xs font-bold flex items-center gap-1.5 hover:opacity-90 transition-all duration-300"
             >
               <Download className="w-3.5 h-3.5" />
               Download
             </button>
-            <button className="h-9 px-3 rounded-lg border border-tiktok-cyan text-tiktok-cyan text-xs font-bold hover:bg-tiktok-cyan/10 transition-all duration-300">
+            <button
+              onClick={() => handleDownload(video.musicUrl, `${video.author}_${video.id}.mp3`)}
+              className="h-9 px-3 rounded-lg border border-tiktok-cyan text-tiktok-cyan text-xs font-bold hover:bg-tiktok-cyan/10 transition-all duration-300"
+            >
               <Music className="w-3.5 h-3.5" />
             </button>
           </>
