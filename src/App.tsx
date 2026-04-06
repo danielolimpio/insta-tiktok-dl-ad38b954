@@ -14,6 +14,7 @@ import PrivacyPage from "./pages/PrivacyPage.tsx";
 import TermsPage from "./pages/TermsPage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
+import ResponsibleUsePage from "./pages/ResponsibleUsePage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/termos" element={<TermsPage />} />
           <Route path="/sobre" element={<AboutPage />} />
           <Route path="/contato" element={<ContactPage />} />
+          <Route path="/uso-responsavel" element={<ResponsibleUsePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -14,6 +14,7 @@ export function Footer() {
             <Link to="/privacidade" className="hover:text-tiktok-cyan transition-colors">Privacidade</Link>
             <Link to="/contato" className="hover:text-tiktok-cyan transition-colors">Contato</Link>
             <Link to="/sobre" className="hover:text-tiktok-cyan transition-colors">Sobre</Link>
+            <Link to="/uso-responsavel" className="hover:text-tiktok-cyan transition-colors">Uso Responsável</Link>
           </nav>
         </div>
         <div className="mt-8 pt-6 border-t border-sidebar-border text-center">
