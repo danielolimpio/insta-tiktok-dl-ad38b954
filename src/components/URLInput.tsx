@@ -78,6 +78,8 @@ export function URLInput({ onSubmit, isLoading }: URLInputProps) {
         )}
         {isLoading ? "Processando..." : "Baixar Agora"}
       </motion.button>
+
+      <DownloadDisclaimer />
     </motion.div>
   );
 }
