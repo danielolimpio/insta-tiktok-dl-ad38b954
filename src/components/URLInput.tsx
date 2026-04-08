@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, Clipboard, Download, Loader2 } from "lucide-react";
+import { Link, Clipboard, X, Download, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { DownloadDisclaimer } from "./DownloadDisclaimer";
@@ -54,15 +54,24 @@ export function URLInput({ onSubmit, isLoading }: URLInputProps) {
           onChange={(e) => setUrl(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
           placeholder="Cole o link do vídeo do TikTok aqui..."
-          className="w-full h-14 pl-12 pr-24 rounded-xl border-2 border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-tiktok-cyan transition-colors duration-300 text-sm"
+          className="w-full h-14 pl-12 pr-44 rounded-xl border-2 border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-tiktok-cyan transition-colors duration-300 text-sm"
         />
-        <button
-          onClick={handlePaste}
-          className="absolute right-3 flex items-center gap-1.5 px-3 py-2 rounded-lg bg-muted text-muted-foreground hover:text-foreground text-xs font-medium transition-colors duration-300"
-        >
-          <Clipboard className="w-3.5 h-3.5" />
-          Colar
-        </button>
+        <div className="absolute right-3 flex items-center gap-1.5">
+          <button
+            onClick={handlePaste}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-muted text-muted-foreground hover:text-foreground text-xs font-medium transition-colors duration-300"
+          >
+            <Clipboard className="w-3.5 h-3.5" />
+            Colar
+          </button>
+          <button
+            onClick={() => setUrl("")}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-muted text-muted-foreground hover:text-foreground text-xs font-medium transition-colors duration-300"
+          >
+            <X className="w-3.5 h-3.5" />
+            Limpar
+          </button>
+        </div>
       </div>
 
       <motion.button
