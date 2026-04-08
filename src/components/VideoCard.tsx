@@ -42,7 +42,7 @@ const downloadFile = async (
         onProgress(Math.min((received / total) * 100, 99));
       }
 
-      const blob = new Blob(chunks, { type: filename.endsWith(".mp3") ? "audio/mpeg" : "video/mp4" });
+      const blob = new Blob(chunks as BlobPart[], { type: filename.endsWith(".mp3") ? "audio/mpeg" : "video/mp4" });
       triggerBlobDownload(blob, filename);
     } else {
       // Fallback: no content-length, just get full blob
