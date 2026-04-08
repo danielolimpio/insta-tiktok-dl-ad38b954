@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, Clipboard, Download, Loader2 } from "lucide-react";
+import { Link, Clipboard, X, Download, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { DownloadDisclaimer } from "./DownloadDisclaimer";
