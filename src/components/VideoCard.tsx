@@ -27,7 +27,7 @@ export function VideoCard({ video }: { video: VideoInfo }) {
 
   const startDownload = async (forcedQuality?: "mp3") => {
     const selectedQuality = forcedQuality ?? quality;
-    const isHd = quality === "1080p";
+    const isHd = selectedQuality === "1080p";
     const isMp3 = selectedQuality === "mp3";
     const ext = isMp3 ? "mp3" : "mp4";
     const filename = `${video.author}_${video.id}.${ext}`;
