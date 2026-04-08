@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Home, Download, Video, Music, Settings, HelpCircle, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/logo.png";
 
 const navItems = [
   { label: "Início", icon: Home, path: "/" },
@@ -20,9 +21,7 @@ export function AppSidebar() {
   const sidebar = (
     <div className="flex flex-col h-full bg-tiktok-black text-sidebar-foreground">
       <div className="p-6 flex items-center gap-3">
-        <div className="w-10 h-10 rounded-xl gradient-tiktok flex items-center justify-center">
-          <Music className="w-5 h-5 text-foreground" />
-        </div>
+        <img src={logo} alt="TikDown" className="w-10 h-10 rounded-xl object-cover" />
         <div>
           <h1 className="text-lg font-bold text-sidebar-foreground">TikDown</h1>
           <p className="text-xs text-muted-foreground">Baixar Vídeos</p>

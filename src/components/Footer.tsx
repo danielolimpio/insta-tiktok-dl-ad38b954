@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 export function Footer() {
   return (
     <footer className="bg-tiktok-dark text-secondary-foreground mt-20">
       <div className="max-w-5xl mx-auto px-6 py-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left flex items-center gap-3 justify-center md:justify-start">
+            <img src={logo} alt="TikDown" className="w-8 h-8 rounded-lg" />
             <h3 className="font-bold text-lg text-secondary-foreground">TikDown</h3>
             <p className="text-xs text-muted-foreground mt-1">Sem Marca d'Água • Grátis • Ilimitado</p>
           </div>
