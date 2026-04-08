@@ -54,7 +54,7 @@ export function URLInput({ onSubmit, isLoading }: URLInputProps) {
           onChange={(e) => setUrl(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
           placeholder="Cole o link do vídeo do TikTok aqui..."
-          className="w-full h-14 pl-12 pr-24 rounded-xl border-2 border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-tiktok-cyan transition-colors duration-300 text-sm"
+          className="w-full h-14 pl-12 pr-44 rounded-xl border-2 border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-tiktok-cyan transition-colors duration-300 text-sm"
         />
         <div className="absolute right-3 flex items-center gap-1.5">
           <button
