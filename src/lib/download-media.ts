@@ -48,15 +48,15 @@ async function fetchTypedBlob(
 
   if (response.body) {
     const reader = response.body.getReader();
-    const chunks: Uint8Array[] = [];
+    const chunks: ArrayBuffer[] = [];
     let received = 0;
 
     while (true) {
       const { done, value } = await reader.read();
       if (done) break;
       if (!value) continue;
-      chunks.push(value);
-      received += value.length;
+      chunks.push(value.slice().buffer as ArrayBuffer);
+      received += value.byteLength;
 
       if (total > 0) {
         onProgress(Math.min((received / total) * 100, 99));
