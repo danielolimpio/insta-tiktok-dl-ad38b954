@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Download, Music, X, Check, Trash2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { toast } from "sonner";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { downloadMedia } from "@/lib/download-media";
 
 export interface VideoInfo {
   id: string;
@@ -16,93 +19,54 @@ export interface VideoInfo {
 
 type DownloadState = "idle" | "downloading" | "completed";
 
-const downloadFile = async (
-  url: string,
-  filename: string,
-  onProgress: (p: number) => void,
-  onDone: () => void
-) => {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error("Download failed");
-
-    const contentLength = response.headers.get("content-length");
-    const total = contentLength ? parseInt(contentLength, 10) : 0;
-
-    if (total && response.body) {
-      const reader = response.body.getReader();
-      const chunks: Uint8Array[] = [];
-      let received = 0;
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        chunks.push(value);
-        received += value.length;
-        onProgress(Math.min((received / total) * 100, 99));
-      }
-
-      const blob = new Blob(chunks as BlobPart[], { type: filename.endsWith(".mp3") ? "audio/mpeg" : "video/mp4" });
-      triggerBlobDownload(blob, filename);
-    } else {
-      // Fallback: no content-length, just get full blob
-      const blob = await response.blob();
-      triggerBlobDownload(blob, filename);
-    }
-
-    onProgress(100);
-    onDone();
-  } catch {
-    // Fallback: open in new tab
-    window.open(url, "_blank");
-    onProgress(100);
-    onDone();
-  }
-};
-
-function triggerBlobDownload(blob: Blob, filename: string) {
-  const blobUrl = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = blobUrl;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
-}
-
 export function VideoCard({ video }: { video: VideoInfo }) {
+  const isMobile = useIsMobile();
   const [quality, setQuality] = useState("1080p");
   const [state, setState] = useState<DownloadState>("idle");
   const [progress, setProgress] = useState(0);
 
-  const startDownload = () => {
-    const isHd = quality === "1080p";
-    const isMp3 = quality === "mp3";
-    const url = isMp3 ? video.musicUrl : isHd ? video.downloadUrlHd : video.downloadUrl;
+  const startDownload = async (forcedQuality?: "mp3") => {
+    const selectedQuality = forcedQuality ?? quality;
+    const isHd = selectedQuality === "1080p";
+    const isMp3 = selectedQuality === "mp3";
     const ext = isMp3 ? "mp3" : "mp4";
     const filename = `${video.author}_${video.id}.${ext}`;
+    const urls = isMp3
+      ? [video.musicUrl]
+      : isMobile
+        ? [video.downloadUrl, video.downloadUrlHd]
+        : isHd
+          ? [video.downloadUrlHd, video.downloadUrl]
+          : [video.downloadUrl, video.downloadUrlHd];
 
     setState("downloading");
     setProgress(0);
 
-    downloadFile(
-      url,
-      filename,
-      (p) => setProgress(p),
-      () => setState("completed")
-    );
+    try {
+      await downloadMedia({
+        urls,
+        filename,
+        kind: isMp3 ? "audio" : "video",
+        isMobile,
+        onProgress: (p) => setProgress(p),
+        onDone: () => setState("completed"),
+      });
+    } catch {
+      setState("idle");
+      setProgress(0);
+      toast.error("Não foi possível baixar este arquivo no momento.");
+    }
   };
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="flex flex-col gap-3 p-4 rounded-2xl border border-border bg-card shadow-sm hover:shadow-md transition-shadow duration-300"
+      className="flex flex-col gap-4 overflow-hidden rounded-2xl border border-border bg-card p-4 shadow-sm transition-shadow duration-300 hover:shadow-md"
     >
       {/* Top row: thumbnail + info */}
-      <div className="flex items-start gap-3">
-        <div className="w-20 h-20 sm:w-[140px] sm:h-24 rounded-lg bg-muted overflow-hidden flex-shrink-0">
+      <div className="grid gap-4 sm:grid-cols-[140px_minmax(0,1fr)] sm:items-start">
+        <div className="h-48 w-full overflow-hidden rounded-xl bg-muted sm:h-24 sm:w-[140px]">
           {video.thumbnail ? (
             <img
               src={video.thumbnail}
@@ -124,8 +88,8 @@ export function VideoCard({ video }: { video: VideoInfo }) {
           )}
         </div>
 
-        <div className="flex-1 min-w-0">
-          <h3 className="font-semibold text-sm text-foreground line-clamp-2">{video.title}</h3>
+        <div className="min-w-0">
+          <h3 className="line-clamp-2 text-base font-semibold text-foreground sm:text-sm">{video.title}</h3>
           <p className="text-xs text-muted-foreground mt-1">
             TikTok • {video.size} • {video.duration}
           </p>
@@ -154,13 +118,13 @@ export function VideoCard({ video }: { video: VideoInfo }) {
       )}
 
       {/* Action buttons - full width on mobile */}
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
         {state === "idle" && (
           <>
             <select
               value={quality}
               onChange={(e) => setQuality(e.target.value)}
-              className="h-9 px-2 rounded-lg border border-border bg-background text-xs font-medium text-foreground flex-1 min-w-[100px]"
+              className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm font-medium text-foreground sm:h-9 sm:flex-1 sm:min-w-[120px] sm:px-2 sm:text-xs"
             >
               <option value="1080p">MP4 1080p</option>
               <option value="720p">MP4 720p</option>
@@ -168,34 +132,29 @@ export function VideoCard({ video }: { video: VideoInfo }) {
               <option value="mp3">MP3</option>
             </select>
             <button
-              onClick={startDownload}
-              className="h-9 px-4 rounded-lg bg-primary text-primary-foreground text-xs font-bold flex items-center gap-1.5 hover:opacity-90 transition-all duration-300 flex-1 min-w-[100px] justify-center"
+              onClick={() => {
+                void startDownload();
+              }}
+              className="flex h-11 w-full items-center justify-center gap-1.5 rounded-lg bg-primary px-4 text-sm font-bold text-primary-foreground transition-all duration-300 hover:opacity-90 sm:h-9 sm:flex-1 sm:min-w-[140px] sm:text-xs"
             >
               <Download className="w-3.5 h-3.5" />
               Download
             </button>
             <button
               onClick={() => {
-                setState("downloading");
-                setProgress(0);
-                downloadFile(
-                  video.musicUrl,
-                  `${video.author}_${video.id}.mp3`,
-                  (p) => setProgress(p),
-                  () => setState("completed")
-                );
+                void startDownload("mp3");
               }}
-              className="h-9 px-3 rounded-lg border border-tiktok-cyan text-tiktok-cyan text-xs font-bold hover:bg-tiktok-cyan/10 transition-all duration-300 flex items-center gap-1.5 justify-center"
+              className="flex h-11 w-full items-center justify-center gap-1.5 rounded-lg border border-tiktok-cyan px-3 text-sm font-bold text-tiktok-cyan transition-all duration-300 hover:bg-tiktok-cyan/10 sm:h-9 sm:w-auto sm:text-xs"
             >
               <Music className="w-3.5 h-3.5" />
-              <span className="sm:hidden">MP3</span>
+              <span>Baixar MP3</span>
             </button>
           </>
         )}
         {state === "downloading" && (
           <button
             onClick={() => { setState("idle"); setProgress(0); }}
-            className="h-9 w-9 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary/20 transition-colors"
+            className="flex h-11 w-full items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors hover:bg-primary/20 sm:h-9 sm:w-9 sm:rounded-full"
           >
             <X className="w-4 h-4" />
           </button>
@@ -203,7 +162,7 @@ export function VideoCard({ video }: { video: VideoInfo }) {
         {state === "completed" && (
           <button
             onClick={() => { setState("idle"); setProgress(0); }}
-            className="h-9 w-9 rounded-full bg-muted text-muted-foreground flex items-center justify-center hover:text-destructive transition-colors"
+            className="flex h-11 w-full items-center justify-center rounded-xl bg-muted text-muted-foreground transition-colors hover:text-destructive sm:h-9 sm:w-9 sm:rounded-full"
           >
             <Trash2 className="w-4 h-4" />
           </button>
