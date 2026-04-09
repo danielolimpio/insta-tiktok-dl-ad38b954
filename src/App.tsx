@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound.tsx";
 import DownloadPage from "./pages/DownloadPage.tsx";
 import SettingsPage from "./pages/SettingsPage.tsx";
 import HelpPage from "./pages/HelpPage.tsx";
+import FAQPage from "./pages/FAQPage.tsx";
 import PrivacyPage from "./pages/PrivacyPage.tsx";
 import TermsPage from "./pages/TermsPage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/download" element={<DownloadPage />} />
           <Route path="/configuracoes" element={<SettingsPage />} />
           <Route path="/ajuda" element={<HelpPage />} />
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="/privacidade" element={<PrivacyPage />} />
           <Route path="/termos" element={<TermsPage />} />
           <Route path="/sobre" element={<AboutPage />} />
