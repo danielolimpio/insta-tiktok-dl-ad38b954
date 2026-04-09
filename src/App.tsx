@@ -3,11 +3,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import DownloadPage from "./pages/DownloadPage.tsx";
-import VideoPage from "./pages/VideoPage.tsx";
-import AudioPage from "./pages/AudioPage.tsx";
 import SettingsPage from "./pages/SettingsPage.tsx";
 import HelpPage from "./pages/HelpPage.tsx";
 import PrivacyPage from "./pages/PrivacyPage.tsx";
@@ -24,11 +23,10 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/download" element={<DownloadPage />} />
-          <Route path="/video" element={<VideoPage />} />
-          <Route path="/audio" element={<AudioPage />} />
           <Route path="/configuracoes" element={<SettingsPage />} />
           <Route path="/ajuda" element={<HelpPage />} />
           <Route path="/privacidade" element={<PrivacyPage />} />

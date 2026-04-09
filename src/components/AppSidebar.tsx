@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Home, Download, Video, Music, Settings, HelpCircle, Menu, X } from "lucide-react";
+import { Home, Download, Settings, HelpCircle, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
 
 const navItems = [
   { label: "Início", icon: Home, path: "/" },
-  { label: "Download", icon: Download, path: "/download" },
-  { label: "Vídeo", icon: Video, path: "/video" },
-  { label: "Áudio/MP3", icon: Music, path: "/audio" },
+  { label: "Downloads", icon: Download, path: "/download" },
   { label: "Configurações", icon: Settings, path: "/configuracoes" },
   { label: "Ajuda e Suporte", icon: HelpCircle, path: "/ajuda" },
 ];
@@ -53,12 +51,10 @@ export function AppSidebar() {
 
   return (
     <>
-      {/* Desktop sidebar */}
       <aside className="hidden lg:block w-[280px] h-screen fixed left-0 top-0 z-40">
         {sidebar}
       </aside>
 
-      {/* Mobile trigger */}
       <button
         onClick={() => setMobileOpen(true)}
         className="lg:hidden fixed top-4 left-4 z-50 w-10 h-10 rounded-xl bg-tiktok-black flex items-center justify-center text-sidebar-foreground"
@@ -66,7 +62,6 @@ export function AppSidebar() {
         <Menu className="w-5 h-5" />
       </button>
 
-      {/* Mobile overlay */}
       <AnimatePresence>
         {mobileOpen && (
           <>
