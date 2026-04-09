@@ -11,6 +11,21 @@ import { Footer } from "@/components/Footer";
 import { fetchTikTokVideo } from "@/lib/tiktok-api";
 import { toast } from "sonner";
 
+const HISTORY_KEY = "tikdown_history";
+
+function saveToHistory(video: VideoInfo) {
+  try {
+    const raw = localStorage.getItem(HISTORY_KEY);
+    const history: VideoInfo[] = raw ? JSON.parse(raw) : [];
+    const exists = history.some((v) => v.id === video.id);
+    if (!exists) {
+      history.unshift(video);
+      if (history.length > 50) history.pop();
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+    }
+  } catch {}
+}
+
 const Index = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [videos, setVideos] = useState<VideoInfo[]>([]);
@@ -21,6 +36,7 @@ const Index = () => {
     try {
       const videoData = await fetchTikTokVideo(url);
       setVideos([videoData]);
+      saveToHistory(videoData);
       toast.success("Vídeo pronto para download!");
     } catch (error: any) {
       toast.error(error.message || "Erro ao buscar o vídeo. Tente novamente.");
@@ -53,17 +69,12 @@ const Index = () => {
           {/* URL Input */}
           <URLInput onSubmit={handleSubmit} isLoading={isLoading} />
 
-          {/* Features */}
-          <div className="mt-12">
-            <FeatureCards />
-          </div>
-
-          {/* Video Results */}
+          {/* Video Results - right after disclaimer, above features */}
           {videos.length > 0 && (
             <motion.section
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="mt-12 max-w-3xl mx-auto"
+              className="mt-8 max-w-3xl mx-auto"
             >
               <h2 className="text-xl font-bold text-foreground mb-4">Vídeos Encontrados</h2>
               <div className="space-y-3">
@@ -73,6 +84,11 @@ const Index = () => {
               </div>
             </motion.section>
           )}
+
+          {/* Features */}
+          <div className="mt-12">
+            <FeatureCards />
+          </div>
 
           {/* How It Works */}
           <div className="mt-20">

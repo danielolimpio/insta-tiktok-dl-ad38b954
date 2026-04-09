@@ -69,13 +69,15 @@ export function URLInput({ onSubmit, isLoading }: URLInputProps) {
             <Clipboard className="w-3.5 h-3.5" />
             Colar
           </button>
-          <button
-            onClick={() => setUrl("")}
-            className="flex items-center justify-center gap-1.5 rounded-lg bg-muted px-3 py-2 text-xs font-medium text-muted-foreground transition-colors duration-300 hover:text-foreground"
-          >
-            <X className="w-3.5 h-3.5" />
-            Limpar
-          </button>
+          {url.length > 0 && (
+            <button
+              onClick={() => setUrl("")}
+              className="flex items-center justify-center gap-1.5 rounded-lg bg-muted px-3 py-2 text-xs font-medium text-muted-foreground transition-colors duration-300 hover:text-foreground"
+            >
+              <X className="w-3.5 h-3.5" />
+              Limpar
+            </button>
+          )}
         </div>
       </div>
 
