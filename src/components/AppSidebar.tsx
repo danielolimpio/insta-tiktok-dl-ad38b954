@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Home, Download, Settings, HelpCircle, Menu, X } from "lucide-react";
+import { Home, Download, Settings, HelpCircle, MessageCircleQuestion, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
 
@@ -9,6 +9,7 @@ const navItems = [
   { label: "Downloads", icon: Download, path: "/download" },
   { label: "Configurações", icon: Settings, path: "/configuracoes" },
   { label: "Ajuda e Suporte", icon: HelpCircle, path: "/ajuda" },
+  { label: "FAQ", icon: MessageCircleQuestion, path: "/faq" },
 ];
 
 export function AppSidebar() {
