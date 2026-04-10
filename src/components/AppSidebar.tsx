@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Home, Download, Settings, HelpCircle, MessageCircleQuestion, Menu, X } from "lucide-react";
+import { Home, Download, Settings, HelpCircle, MessageCircleQuestion, Menu, X, ExternalLink } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
+import logoInstagram from "@/assets/logo-instagram.png";
+import logoFacebook from "@/assets/logo-facebook.png";
+import logoYoutube from "@/assets/logo-youtube.png";
+import logoKwai from "@/assets/logo-kwai.png";
 
 const navItems = [
   { label: "Início", icon: Home, path: "/" },
@@ -10,6 +14,13 @@ const navItems = [
   { label: "Configurações", icon: Settings, path: "/configuracoes" },
   { label: "Ajuda e Suporte", icon: HelpCircle, path: "/ajuda" },
   { label: "FAQ", icon: MessageCircleQuestion, path: "/faq" },
+];
+
+const externalSites = [
+  { label: "Baixar Instagram", url: "https://baixarvideosinstagram.com", logo: logoInstagram, color: "from-pink-500 to-purple-600" },
+  { label: "Baixar Facebook", url: "https://baixarvideosfacebook.com", logo: logoFacebook, color: "from-blue-600 to-blue-800" },
+  { label: "Baixar Youtube", url: "https://baixarvideoyoutube.com", logo: logoYoutube, color: "from-red-600 to-red-800" },
+  { label: "Baixar Kwai", url: "https://baixarvideoskwai.com", logo: logoKwai, color: "from-orange-500 to-red-500" },
 ];
 
 export function AppSidebar() {
@@ -41,6 +52,31 @@ export function AppSidebar() {
             <item.icon className="w-5 h-5" />
             <span>{item.label}</span>
           </button>
+        ))}
+
+        {/* Divider */}
+        <div className="my-6 border-t border-sidebar-border/50" />
+
+        {/* External Sites Section */}
+        <p className="px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
+          Outras Plataformas
+        </p>
+
+        {externalSites.map((site) => (
+          <a
+            key={site.label}
+            href={site.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileOpen(false)}
+            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 group mb-2"
+          >
+            <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${site.color} p-1.5 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}>
+              <img src={site.logo} alt={site.label} className="w-full h-full object-contain" />
+            </div>
+            <span className="text-sidebar-foreground/80 group-hover:text-sidebar-foreground">{site.label}</span>
+            <ExternalLink className="w-4 h-4 ml-auto text-muted-foreground/50 group-hover:text-muted-foreground" />
+          </a>
         ))}
       </nav>
 
