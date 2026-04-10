@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
+import logoInstagram from "@/assets/logo-instagram.png";
+import logoFacebook from "@/assets/logo-facebook.png";
+import logoYoutube from "@/assets/logo-youtube.png";
+import logoKwai from "@/assets/logo-kwai.png";
 
 export function Footer() {
   return (
@@ -20,6 +24,32 @@ export function Footer() {
             <Link to="/faq" className="hover:text-tiktok-cyan transition-colors">FAQ</Link>
           </nav>
         </div>
+
+        {/* Outras Plataformas */}
+        <div className="mt-8 pt-6 border-t border-sidebar-border/50">
+          <p className="text-center text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">
+            Baixar Vídeos de Outras Plataformas
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="https://baixarvideosinstagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-pink-500/20 to-purple-600/20 hover:from-pink-500/30 hover:to-purple-600/30 border border-pink-500/30 transition-all group">
+              <img src={logoInstagram} alt="Instagram" className="w-6 h-6 rounded" />
+              <span className="text-sm text-pink-400 group-hover:text-pink-300">Instagram</span>
+            </a>
+            <a href="https://baixarvideosfacebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600/20 to-blue-800/20 hover:from-blue-600/30 hover:to-blue-800/30 border border-blue-500/30 transition-all group">
+              <img src={logoFacebook} alt="Facebook" className="w-6 h-6 rounded" />
+              <span className="text-sm text-blue-400 group-hover:text-blue-300">Facebook</span>
+            </a>
+            <a href="https://baixarvideoyoutube.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-red-600/20 to-red-800/20 hover:from-red-600/30 hover:to-red-800/30 border border-red-500/30 transition-all group">
+              <img src={logoYoutube} alt="Youtube" className="w-6 h-6 rounded" />
+              <span className="text-sm text-red-400 group-hover:text-red-300">Youtube</span>
+            </a>
+            <a href="https://baixarvideoskwai.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-orange-500/20 to-red-500/20 hover:from-orange-500/30 hover:to-red-500/30 border border-orange-500/30 transition-all group">
+              <img src={logoKwai} alt="Kwai" className="w-6 h-6 rounded" />
+              <span className="text-sm text-orange-400 group-hover:text-orange-300">Kwai</span>
+            </a>
+          </div>
+        </div>
+
         <div className="mt-8 pt-6 border-t border-sidebar-border text-center">
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} baixarvideostiktok.com — Todos os direitos reservados.
