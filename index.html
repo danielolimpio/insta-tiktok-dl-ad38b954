@@ -108,7 +108,25 @@
   </head>
 
   <body>
+    <!-- Custom Splash Screen -->
+    <div id="splash-screen">
+      <img src="/logo-splash.png" alt="TikDown">
+    </div>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Hide splash screen when app loads -->
+    <script>
+      window.addEventListener('load', function() {
+        const splash = document.getElementById('splash-screen');
+        if (splash) {
+          splash.classList.add('fade-out');
+          setTimeout(function() {
+            splash.style.display = 'none';
+          }, 300);
+        }
+      });
+    </script>
   </body>
 </html>
