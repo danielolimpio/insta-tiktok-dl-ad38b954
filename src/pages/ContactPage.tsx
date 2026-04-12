@@ -38,7 +38,7 @@ const ContactPage = () => {
                 Entre em <span className="text-gradient-tiktok">Contato</span>
               </h1>
               <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-                Tem alguma dúvida ou sugestão? Ficaremos felizes em ajudar!
+                Dúvidas sobre como baixar videos TikTok ou usar nosso baixador? Ficaremos felizes em ajudar!
               </p>
             </div>
 

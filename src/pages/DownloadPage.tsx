@@ -63,10 +63,10 @@ const DownloadPage = () => {
               Histórico Local
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground leading-tight">
-              Histórico de <span className="text-gradient-tiktok">Downloads</span>
+              Histórico de <span className="text-gradient-tiktok">Videos Baixados</span>
             </h1>
             <p className="text-muted-foreground mt-3 text-base max-w-xl mx-auto">
-              Veja os vídeos que você já baixou. O histórico é salvo localmente no seu navegador e será apagado ao limpar os cookies.
+              Veja todos os videos TikTok que você já baixou. O histórico é salvo localmente no seu navegador para você acessar seus downloads facilmente.
             </p>
           </motion.div>
 

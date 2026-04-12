@@ -17,7 +17,7 @@ const TermsPage = () => {
                 <FileText className="w-8 h-8 text-primary-foreground" />
               </div>
               <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground">
-                Termos de <span className="text-gradient-tiktok">Uso</span>
+                Termos de <span className="text-gradient-tiktok">Uso</span> do Baixador de Videos TikTok
               </h1>
               <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
                 Última atualização: {new Date().toLocaleDateString('pt-BR')}
@@ -34,7 +34,7 @@ const TermsPage = () => {
                 {
                   icon: FileText,
                   title: "Descrição do Serviço",
-                  content: "O baixarvideostiktok.com é uma ferramenta online gratuita que permite baixar vídeos do TikTok sem marca d'água. Nosso serviço processa links do TikTok para extrair vídeos em formato MP4 e áudios em formato MP3. Não hospedamos nenhum conteúdo em nossos servidores."
+                  content: "O baixarvideostiktok.com é um baixador de videos TikTok online e gratuito que permite baixar videos do TikTok sem marca d'água. Nosso serviço processa links do TikTok para salvar video do TikTok em formato MP4 e áudios em MP3. Funciona como app para baixar videos do TikTok no celular Android, iPhone e PC. Não hospedamos conteúdo em nossos servidores."
                 },
                 {
                   icon: AlertTriangle,
