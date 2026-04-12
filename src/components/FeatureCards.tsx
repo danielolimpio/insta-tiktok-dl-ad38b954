@@ -2,10 +2,10 @@ import { CheckCircle, Infinity, Star, Gift } from "lucide-react";
 import { motion } from "framer-motion";
 
 const features = [
-  { icon: CheckCircle, title: "Sem Marca d'Água", desc: "Vídeos limpos, sem logos" },
-  { icon: Infinity, title: "Download Ilimitado", desc: "Sem limites de uso" },
-  { icon: Star, title: "Alta Qualidade", desc: "Até 1080p em MP4" },
-  { icon: Gift, title: "100% Grátis", desc: "Nenhum custo, nunca" },
+  { icon: CheckCircle, title: "Sem Marca d'Água", desc: "Tirar marca d'água do TikTok online" },
+  { icon: Infinity, title: "Download Ilimitado", desc: "Baixar videos TikTok sem limites" },
+  { icon: Star, title: "Alta Qualidade", desc: "Salvar video do TikTok até 1080p" },
+  { icon: Gift, title: "100% Grátis", desc: "Baixador de videos TikTok gratuito" },
 ];
 
 export function FeatureCards() {

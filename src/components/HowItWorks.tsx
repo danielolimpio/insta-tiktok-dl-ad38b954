@@ -2,16 +2,16 @@ import { ClipboardPaste, Download, Save } from "lucide-react";
 import { motion } from "framer-motion";
 
 const steps = [
-  { icon: ClipboardPaste, title: "Cole o link", desc: "Copie o link do vídeo no TikTok e cole no campo acima." },
-  { icon: Download, title: "Clique em baixar", desc: "Clique no botão para processar e preparar o download." },
-  { icon: Save, title: "Faça o download", desc: "Escolha a qualidade e salve o vídeo no seu dispositivo." },
+  { icon: ClipboardPaste, title: "Cole o link", desc: "Copie o link do vídeo no TikTok e cole no campo acima para baixar videos TikTok." },
+  { icon: Download, title: "Clique em baixar", desc: "Clique no botão para processar e remover marca d'água TikTok automaticamente." },
+  { icon: Save, title: "Salve o vídeo", desc: "Escolha a qualidade e salvar video do TikTok no celular ou PC sem marca d'água." },
 ];
 
 export function HowItWorks() {
   return (
     <section className="w-full max-w-3xl mx-auto">
       <h2 className="text-2xl font-bold text-foreground text-center mb-8">
-        Como Baixar Vídeos do TikTok
+        Como Baixar Videos do TikTok Sem Marca d'Água
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {steps.map((step, i) => (
