@@ -20,7 +20,7 @@ const PrivacyPage = () => {
                 Política de <span className="text-gradient-tiktok">Privacidade</span>
               </h1>
               <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-                Última atualização: {new Date().toLocaleDateString('pt-BR')}
+                Sua segurança ao baixar videos TikTok é nossa prioridade. Última atualização: {new Date().toLocaleDateString('pt-BR')}
               </p>
             </div>
 
@@ -29,7 +29,7 @@ const PrivacyPage = () => {
                 {
                   icon: Eye,
                   title: "Informações que Coletamos",
-                  content: "O site baixarvideostiktok.com não coleta dados pessoais identificáveis. Não exigimos cadastro, login ou qualquer tipo de registro para utilizar nossos serviços. As únicas informações processadas são os links de vídeo do TikTok que você insere voluntariamente para realizar o download."
+                  content: "O baixarvideostiktok.com — seu baixador de videos TikTok — não coleta dados pessoais identificáveis. Não exigimos cadastro, login ou qualquer registro para baixar videos do TikTok. As únicas informações processadas são os links de vídeo que você insere para salvar video do TikTok."
                 },
                 {
                   icon: Lock,

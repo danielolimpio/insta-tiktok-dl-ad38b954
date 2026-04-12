@@ -18,10 +18,10 @@ const HelpPage = () => {
               Central de Ajuda
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground leading-tight">
-              <span className="text-gradient-tiktok">Ajuda</span> e Suporte
+              <span className="text-gradient-tiktok">Ajuda</span> para Baixar Videos TikTok
             </h1>
             <p className="text-muted-foreground mt-3 text-base max-w-xl mx-auto">
-              Tem dúvidas? Encontre respostas detalhadas abaixo ou entre em contato conosco.
+              Dúvidas sobre como baixar videos do TikTok sem marca d'água? Encontre respostas detalhadas e tutoriais completos abaixo.
             </p>
           </motion.div>
 
@@ -42,15 +42,15 @@ const HelpPage = () => {
             ))}
           </div>
 
-          {/* How to Use - Step by Step */}
+          {/* How to Use */}
           <section className="max-w-3xl mx-auto mb-16">
-            <h2 className="text-2xl font-bold text-foreground text-center mb-2">Como Usar o TikDown</h2>
-            <p className="text-muted-foreground text-center text-sm mb-8">Guia passo a passo completo para baixar vídeos do TikTok</p>
+            <h2 className="text-2xl font-bold text-foreground text-center mb-2">Como Baixar Videos do TikTok Sem Marca d'Água</h2>
+            <p className="text-muted-foreground text-center text-sm mb-8">Guia passo a passo para baixar video do TikTok, salvar videos TikTok e tirar marca d'água</p>
             <div className="space-y-4">
               {[
-                { step: "1", icon: Link, title: "Copie o link do vídeo", desc: "Abra o TikTok, encontre o vídeo desejado, toque em \"Compartilhar\" e depois em \"Copiar link\". O link será salvo na sua área de transferência." },
-                { step: "2", icon: Search, title: "Cole o link no TikDown", desc: "Acesse baixarvideostiktok.com, cole o link no campo de pesquisa e clique em \"Baixar Agora\". Você pode usar o botão \"Colar\" para facilitar." },
-                { step: "3", icon: Download, title: "Escolha a qualidade e baixe", desc: "Selecione a qualidade desejada (1080p, 720p, 480p ou MP3) e clique em \"Download\". O vídeo será salvo no seu dispositivo sem marca d'água." },
+                { step: "1", icon: Link, title: "Copie o link do vídeo do TikTok", desc: "Abra o TikTok no celular Android ou iPhone, encontre o vídeo desejado, toque em \"Compartilhar\" e depois em \"Copiar link\". O link será salvo na sua área de transferência." },
+                { step: "2", icon: Search, title: "Cole o link no baixador de videos TikTok", desc: "Acesse baixarvideostiktok.com, cole o link no campo de pesquisa e clique em \"Baixar Agora\". Nosso sistema vai processar e remover marca d'água TikTok automaticamente." },
+                { step: "3", icon: Download, title: "Salvar video do TikTok sem marca d'água", desc: "Escolha a qualidade desejada (1080p, 720p, 480p ou MP3) e clique em \"Download\". O vídeo será salvo no seu dispositivo sem marca d'água, pronto para assistir offline." },
               ].map((item) => (
                 <div key={item.step} className="flex items-start gap-4 p-5 rounded-2xl border border-border bg-card">
                   <div className="w-10 h-10 rounded-full bg-tiktok-cyan/15 flex items-center justify-center shrink-0">
@@ -70,13 +70,13 @@ const HelpPage = () => {
 
           {/* Supported Platforms */}
           <section className="max-w-3xl mx-auto mb-16">
-            <h2 className="text-2xl font-bold text-foreground text-center mb-2">Dispositivos Compatíveis</h2>
-            <p className="text-muted-foreground text-center text-sm mb-8">O TikDown funciona em qualquer dispositivo com navegador web</p>
+            <h2 className="text-2xl font-bold text-foreground text-center mb-2">Dispositivos para Baixar Videos TikTok</h2>
+            <p className="text-muted-foreground text-center text-sm mb-8">Nosso baixador de videos TikTok funciona em qualquer dispositivo com navegador web</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
-                { icon: Smartphone, title: "Celular", items: ["iPhone (Safari)", "Android (Chrome)", "Qualquer navegador móvel"] },
-                { icon: Monitor, title: "Computador", items: ["Windows (Chrome, Edge, Firefox)", "Mac (Safari, Chrome)", "Linux (qualquer navegador)"] },
-                { icon: Globe, title: "Tablet", items: ["iPad (Safari)", "Tablets Android", "Navegadores padrão"] },
+                { icon: Smartphone, title: "Celular", items: ["TikTok download Android (Chrome)", "Baixar TikTok video no iPhone (Safari)", "Qualquer navegador móvel"] },
+                { icon: Monitor, title: "Computador", items: ["Baixar TikTok no PC Windows", "Baixar videos TikTok no Mac", "Linux (qualquer navegador)"] },
+                { icon: Globe, title: "Tablet", items: ["Salvar video do TikTok no iPad", "Tablets Android", "Navegadores padrão"] },
               ].map((platform) => (
                 <div key={platform.title} className="p-5 rounded-2xl border border-border bg-card">
                   <div className="w-10 h-10 rounded-xl bg-tiktok-cyan/10 flex items-center justify-center mb-3">
@@ -101,16 +101,16 @@ const HelpPage = () => {
 
           {/* Troubleshooting */}
           <section className="mt-16 max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground text-center mb-2">Problemas Comuns e Soluções</h2>
-            <p className="text-muted-foreground text-center text-sm mb-8">Encontre soluções rápidas para os problemas mais frequentes</p>
+            <h2 className="text-2xl font-bold text-foreground text-center mb-2">Problemas ao Baixar Videos do TikTok</h2>
+            <p className="text-muted-foreground text-center text-sm mb-8">Soluções rápidas para os problemas mais comuns ao baixar do TikTok</p>
             <div className="space-y-4">
               {[
-                { icon: AlertTriangle, q: "O vídeo não está baixando", a: "Verifique se o link está correto e se o vídeo é público. Links de vídeos privados, removidos ou com restrição de região não funcionam. Tente copiar o link novamente diretamente do app do TikTok." },
-                { q: "O download está muito lento", a: "A velocidade depende da sua conexão com a internet e da carga do servidor do TikTok. Tente novamente em alguns minutos ou escolha uma qualidade menor (720p ou 480p) para downloads mais rápidos.", icon: AlertTriangle },
-                { q: "O áudio MP3 não tem som", a: "Alguns vídeos do TikTok usam áudio original que pode estar protegido ou ter volume muito baixo. Tente outro vídeo ou verifique o volume do seu dispositivo.", icon: AlertTriangle },
-                { q: "O vídeo baixado não abre no celular", a: "Certifique-se de que seu celular tem um player de vídeo compatível com MP4. No iPhone, os vídeos são salvos automaticamente na galeria. No Android, verifique a pasta de downloads.", icon: AlertTriangle },
-                { q: "Link \"vm.tiktok.com\" não funciona", a: "Links curtos do TikTok (vm.tiktok.com e vt.tiktok.com) são totalmente suportados. Se o link não funcionar, tente acessar o vídeo no TikTok e copiar o link completo da barra de endereços.", icon: AlertTriangle },
-                { q: "O vídeo foi baixado com marca d'água", a: "O TikDown remove automaticamente a marca d'água. Se isso não ocorreu, o servidor pode estar temporariamente indisponível. Tente novamente em alguns minutos.", icon: AlertTriangle },
+                { icon: AlertTriangle, q: "O vídeo do TikTok não está baixando", a: "Verifique se o link está correto e se o vídeo é público. Links de vídeos privados, removidos ou com restrição de região não funcionam. Tente copiar o link novamente diretamente do app do TikTok." },
+                { q: "O download está muito lento ao baixar videos TikTok", a: "A velocidade depende da sua conexão com a internet. Tente novamente em alguns minutos ou escolha uma qualidade menor (720p ou 480p) para baixar video do TikTok mais rápido.", icon: AlertTriangle },
+                { q: "O áudio MP3 extraído não tem som", a: "Alguns vídeos do TikTok usam áudio protegido. Tente salvar video do TikTok com outro vídeo ou verifique o volume do seu dispositivo.", icon: AlertTriangle },
+                { q: "O vídeo baixado não abre no celular Android", a: "Certifique-se de que seu celular tem um player compatível com MP4. No iPhone, os vídeos são salvos na galeria. No Android, verifique a pasta Downloads após baixar video no TikTok.", icon: AlertTriangle },
+                { q: "Link vm.tiktok.com não funciona no baixador", a: "Links curtos (vm.tiktok.com e vt.tiktok.com) são totalmente suportados pelo nosso baixador de videos TikTok. Se não funcionar, copie o link completo da barra de endereços do navegador.", icon: AlertTriangle },
+                { q: "O vídeo foi baixado com marca d'água do TikTok", a: "Nosso sistema remove marca d'água TikTok automaticamente. Se a marca d'água persistir, o servidor pode estar temporariamente sobrecarregado. Tente tirar marca d'água do TikTok novamente em alguns minutos.", icon: AlertTriangle },
               ].map((item) => (
                 <div key={item.q} className="p-5 rounded-2xl border border-border bg-card">
                   <h3 className="font-bold text-foreground text-sm flex items-center gap-2">
@@ -125,16 +125,16 @@ const HelpPage = () => {
 
           {/* Tips */}
           <section className="mt-16 max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground text-center mb-2">Dicas para Melhor Experiência</h2>
-            <p className="text-muted-foreground text-center text-sm mb-8">Aproveite ao máximo o TikDown com estas dicas</p>
+            <h2 className="text-2xl font-bold text-foreground text-center mb-2">Dicas para Baixar Videos TikTok</h2>
+            <p className="text-muted-foreground text-center text-sm mb-8">Aproveite ao máximo nosso baixador de videos TikTok</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                "Use sempre o link mais recente do vídeo para garantir compatibilidade",
-                "Para vídeos longos, prefira a qualidade 720p para downloads mais rápidos",
-                "O botão \"Colar\" facilita a inserção do link sem precisar selecionar manualmente",
-                "Confira o histórico de downloads para reencontrar vídeos já baixados",
-                "Em celulares, verifique a pasta de downloads se o vídeo não aparecer na galeria",
-                "Use o formato MP3 quando quiser apenas o áudio de um vídeo musical",
+                "Use sempre o link mais recente para baixar videos do TikTok com sucesso",
+                "Para vídeos longos, escolha 720p para salvar video do TikTok mais rápido",
+                "O botão \"Colar\" facilita baixar TikTok video sem digitar o link manualmente",
+                "Confira o histórico para reencontrar vídeos já baixados anteriormente",
+                "No Android, verifique a pasta Downloads se o vídeo não aparecer na galeria após baixar",
+                "Use MP3 quando quiser apenas salvar TikTok áudio de um vídeo musical",
               ].map((tip) => (
                 <div key={tip} className="flex items-start gap-3 p-4 rounded-xl border border-border bg-card">
                   <Lightbulb className="w-4 h-4 text-tiktok-cyan shrink-0 mt-0.5" />

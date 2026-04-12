@@ -27,11 +27,11 @@ export function URLInput({ onSubmit, isLoading }: URLInputProps) {
 
   const handleSubmit = () => {
     if (!url.trim()) {
-      toast.error("Cole um link do TikTok para continuar.");
+      toast.error("Cole um link do TikTok para baixar o vídeo.");
       return;
     }
     if (!isValidTikTokUrl(url)) {
-      toast.error("Link inválido. Verifique e tente novamente.");
+      toast.error("Link inválido. Cole um link válido do TikTok.");
       return;
     }
     onSubmit(url.trim());
@@ -57,8 +57,9 @@ export function URLInput({ onSubmit, isLoading }: URLInputProps) {
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
-            placeholder="Cole o link do vídeo do TikTok aqui..."
+            placeholder="Cole o link do vídeo do TikTok aqui para baixar sem marca d'água..."
             className="w-full h-14 rounded-xl border-2 border-border bg-background pl-12 pr-4 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-300 focus:border-tiktok-cyan focus:outline-none sm:pr-44"
+            aria-label="Cole o link do vídeo do TikTok para baixar videos TikTok sem marca d'água"
           />
         </div>
         <div className="grid grid-cols-2 gap-2 sm:absolute sm:right-3 sm:top-1/2 sm:flex sm:-translate-y-1/2 sm:items-center sm:gap-1.5">

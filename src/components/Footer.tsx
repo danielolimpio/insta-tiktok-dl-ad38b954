@@ -11,9 +11,9 @@ export function Footer() {
       <div className="max-w-5xl mx-auto px-6 py-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left flex items-center gap-3 justify-center md:justify-start">
-            <img src={logo} alt="TikDown" className="w-8 h-8 rounded-lg" />
+            <img src={logo} alt="TikDown - Baixar Videos TikTok" className="w-8 h-8 rounded-lg" />
             <h3 className="font-bold text-lg text-secondary-foreground">TikDown</h3>
-            <p className="text-xs text-muted-foreground mt-1">Sem Marca d'Água • Grátis • Ilimitado</p>
+            <p className="text-xs text-muted-foreground mt-1">Baixar Videos TikTok • Sem Marca d'Água • Grátis</p>
           </div>
           <nav className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
             <Link to="/termos" className="hover:text-tiktok-cyan transition-colors">Termos de Uso</Link>
@@ -25,6 +25,13 @@ export function Footer() {
           </nav>
         </div>
 
+        {/* SEO text */}
+        <div className="mt-6 text-center">
+          <p className="text-xs text-muted-foreground/70 max-w-2xl mx-auto leading-relaxed">
+            TikDown — o melhor baixador de videos TikTok online. Baixar videos do TikTok sem marca d'água grátis em MP4 e MP3. Salvar video do TikTok no celular Android, iPhone ou PC. Tirar marca d'água do TikTok com um clique.
+          </p>
+        </div>
+
         {/* Outras Plataformas */}
         <div className="mt-8 pt-6 border-t border-sidebar-border/50">
           <p className="text-center text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">
@@ -32,19 +39,19 @@ export function Footer() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a href="https://baixarvideosinstagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-pink-500/20 to-purple-600/20 hover:from-pink-500/30 hover:to-purple-600/30 border border-pink-500/30 transition-all group">
-              <img src={logoInstagram} alt="Instagram" className="w-6 h-6 rounded" />
+              <img src={logoInstagram} alt="Baixar Videos Instagram" className="w-6 h-6 rounded" />
               <span className="text-sm text-pink-400 group-hover:text-pink-300">Instagram</span>
             </a>
             <a href="https://baixarvideosfacebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600/20 to-blue-800/20 hover:from-blue-600/30 hover:to-blue-800/30 border border-blue-500/30 transition-all group">
-              <img src={logoFacebook} alt="Facebook" className="w-6 h-6 rounded" />
+              <img src={logoFacebook} alt="Baixar Videos Facebook" className="w-6 h-6 rounded" />
               <span className="text-sm text-blue-400 group-hover:text-blue-300">Facebook</span>
             </a>
             <a href="https://baixarvideoyoutube.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-red-600/20 to-red-800/20 hover:from-red-600/30 hover:to-red-800/30 border border-red-500/30 transition-all group">
-              <img src={logoYoutube} alt="Youtube" className="w-6 h-6 rounded" />
+              <img src={logoYoutube} alt="Baixar Videos Youtube" className="w-6 h-6 rounded" />
               <span className="text-sm text-red-400 group-hover:text-red-300">Youtube</span>
             </a>
             <a href="https://baixarvideoskwai.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-orange-500/20 to-red-500/20 hover:from-orange-500/30 hover:to-red-500/30 border border-orange-500/30 transition-all group">
-              <img src={logoKwai} alt="Kwai" className="w-6 h-6 rounded" />
+              <img src={logoKwai} alt="Baixar Videos Kwai" className="w-6 h-6 rounded" />
               <span className="text-sm text-orange-400 group-hover:text-orange-300">Kwai</span>
             </a>
           </div>
@@ -52,10 +59,10 @@ export function Footer() {
 
         <div className="mt-8 pt-6 border-t border-sidebar-border text-center">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} baixarvideostiktok.com — Todos os direitos reservados.
+            © {new Date().getFullYear()} baixarvideostiktok.com — Baixar Videos TikTok Sem Marca d'Água. Todos os direitos reservados.
           </p>
           <p className="text-xs text-muted-foreground mt-2">
-            Não somos afiliados ao TikTok, ByteDance ou Douyin.
+            Não somos afiliados ao TikTok, ByteDance ou Douyin. Baixador de videos TikTok online gratuito.
           </p>
         </div>
       </div>

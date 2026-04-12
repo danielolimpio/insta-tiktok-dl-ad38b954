@@ -60,18 +60,18 @@ const Index = () => {
             className="text-center max-w-3xl mx-auto mb-10 pt-8 lg:pt-0"
           >
             <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground leading-tight">
-              Baixar Vídeo do TikTok{" "}
+              Baixar Videos TikTok{" "}
               <span className="text-gradient-tiktok">Sem Marca d'Água</span>
             </h1>
             <p className="text-muted-foreground mt-3 text-base max-w-xl mx-auto">
-              A melhor ferramenta grátis para baixar vídeos do TikTok em MP4 e MP3. Rápido, fácil e sem limites!
+              Baixador de videos TikTok grátis para salvar video do TikTok em MP4 e MP3. Rápido, fácil e sem limites — funciona no celular Android, iPhone e PC!
             </p>
           </motion.div>
 
           {/* URL Input */}
           <URLInput onSubmit={handleSubmit} isLoading={isLoading} />
 
-          {/* Video Results - right after disclaimer, above features */}
+          {/* Video Results */}
           {videos.length > 0 && (
             <motion.section
               initial={{ opacity: 0 }}

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import {
   Download, Smartphone, Monitor, Shield, Zap, Globe,
-  CheckCircle, Sparkles, ArrowRight, Play, Music2, Film
+  CheckCircle, Sparkles, Music2
 } from "lucide-react";
 import videoDownloaderImg from "@/assets/video-downloader.webp";
 import tiktokDownloaderImg from "@/assets/tiktok-downloader.png";
@@ -19,7 +19,7 @@ export function AdSenseContent() {
           className="text-center mb-10"
         >
           <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground">
-            Baixar vídeo do TikTok com o <span className="text-gradient-tiktok">TikTok Downloader</span>
+            Baixar Videos TikTok com o <span className="text-gradient-tiktok">Melhor Baixador Online</span>
           </h2>
         </motion.div>
 
@@ -31,13 +31,13 @@ export function AdSenseContent() {
             className="space-y-4"
           >
             <p className="text-muted-foreground leading-relaxed">
-              O <strong className="text-foreground">baixarvideostiktok.com</strong> é uma ferramenta online para baixar vídeos do TikTok pelo link. O TikTok downloader pode ajudá-lo a salvar vídeos do TikTok em MP4 com resolução HD. Para saber como download TikTok vídeo online grátis, siga as instruções abaixo.
+              O <strong className="text-foreground">baixarvideostiktok.com</strong> é o melhor baixador de videos TikTok online e gratuito. Aqui você pode baixar videos do TikTok pelo link, salvar video do TikTok em MP4 com resolução HD e tirar marca d'água do TikTok facilmente. Siga as instruções abaixo para aprender como baixar TikTok video sem marca d'água.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Com nosso TikTok Download online, você pode salvar facilmente qualquer vídeo, música ou tirar marca d'água do TikTok no formato MP4 com a melhor qualidade e de download TikTok vídeo rápido.
+              Com nosso baixador de vídeo do TikTok, você pode salvar videos TikTok, remover marca d'água TikTok e converter para MP4 ou MP3 com a melhor qualidade. É a ferramenta ideal para quem quer salvar vídeos do TikTok de forma rápida e segura.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Você não precisa instalar nenhum software no seu celular ou PC. Tudo que você precisa é um link para a página que contém o vídeo TikTok e todo o processamento é feito do nosso lado.
+              Funciona como um aplicativo para baixar video do TikTok — mas sem precisar instalar nada. Basta colar o link e baixar do TikTok direto no navegador do celular ou PC.
             </p>
           </motion.div>
           <motion.div
@@ -46,7 +46,7 @@ export function AdSenseContent() {
             viewport={{ once: true }}
             className="flex justify-center"
           >
-            <img src={videoDownloaderImg} alt="Baixar vídeos do TikTok sem marca d'água" className="w-full max-w-sm rounded-2xl" />
+            <img src={videoDownloaderImg} alt="Baixar videos TikTok sem marca d'água - Baixador de videos TikTok online" className="w-full max-w-sm rounded-2xl" />
           </motion.div>
         </div>
       </section>
@@ -60,10 +60,10 @@ export function AdSenseContent() {
           className="text-center mb-4"
         >
           <p className="text-tiktok-pink font-semibold text-sm mb-2 italic">
-            É tão simples que você pode salvar seus vídeos em três etapas fáceis
+            Salvar video do TikTok em três etapas simples e rápidas
           </p>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground">
-            Como baixar vídeo do TikTok <span className="text-gradient-tiktok">sem marca d'água?</span>
+            Como baixar video do TikTok <span className="text-gradient-tiktok">sem marca d'água?</span>
           </h2>
         </motion.div>
 
@@ -74,7 +74,7 @@ export function AdSenseContent() {
             viewport={{ once: true }}
             className="flex justify-center"
           >
-            <img src={howPicImg} alt="Como baixar vídeo do TikTok" className="w-full max-w-md rounded-3xl" />
+            <img src={howPicImg} alt="Como baixar video do TikTok sem marca d'água no celular e PC" className="w-full max-w-md rounded-3xl" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 30 }}
@@ -85,18 +85,18 @@ export function AdSenseContent() {
             {[
               {
                 step: "1",
-                title: "Encontrar um TT",
-                desc: "Abra o aplicativo TikTok no seu dispositivo móvel. Role a tela para encontrar o vídeo que deseja salvar. Reproduza o vídeo para confirmar se é o correto."
+                title: "Encontre o vídeo no TikTok",
+                desc: "Abra o aplicativo TikTok no celular Android ou iPhone. Role a tela para encontrar o vídeo que deseja baixar. Reproduza para confirmar se é o correto."
               },
               {
                 step: "2",
-                title: "Copiar o link",
-                desc: "Toque no botão Compartilhar, localizado no lado direito da tela. Selecione Copiar link no menu. Verifique sua área de transferência para garantir que o URL foi copiado corretamente."
+                title: "Copie o link do vídeo",
+                desc: "Toque em Compartilhar e selecione Copiar link. Aceita links normais, vm.tiktok.com e vt.tiktok.com — o salve link for TikTok funciona com todos os formatos."
               },
               {
                 step: "3",
-                title: "Salvar TikTok",
-                desc: "Acesse o baixarvideostiktok.com e cole o link copiado no campo de texto na parte superior. Clique em \"Baixar Agora\" para iniciar o download do vídeo."
+                title: "Baixe o TikTok video sem marca d'água",
+                desc: "Cole o link no campo acima, clique em Baixar Agora e escolha a qualidade. O sistema vai remover marca d'água TikTok e entregar o vídeo em MP4 HD pronto para salvar."
               },
             ].map((s) => (
               <div key={s.step} className="flex gap-4">
@@ -122,18 +122,18 @@ export function AdSenseContent() {
           className="text-center mb-10"
         >
           <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground">
-            Por que escolher o <span className="text-gradient-tiktok">BaixarVideosTikTok?</span>
+            Por que usar o <span className="text-gradient-tiktok">TikDown para baixar videos TikTok?</span>
           </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {[
-            { icon: Download, title: "Baixar vídeo do TikTok", desc: "Baixe vídeos do TikTok para editar e publicar seus vídeos. É grátis e sem limites." },
-            { icon: Sparkles, title: "Sem marca d'água", desc: "Baixe o TikTok sem marca d'água, obter vídeos sem o logotipo TT em alta definição." },
-            { icon: Shield, title: "Sem registro necessário", desc: "Seu registro não é necessário. Basta abrir nosso site e colar o link." },
-            { icon: Zap, title: "Alta velocidade", desc: "Salvar vídeos do TikTok pelo link em alta velocidade com servidores otimizados." },
-            { icon: Music2, title: "Download MP3 e MP4", desc: "TikTok download MP4 e arquivos MP3. Converta o áudio das músicas virais." },
-            { icon: Globe, title: "Todos os dispositivos", desc: "TikTok vídeo download funciona em todos os navegadores e todos OS (Windows, MacOS, Linux, Android, iOS)." },
+            { icon: Download, title: "Baixar videos do TikTok", desc: "Baixe videos do TikTok em MP4 para editar e republicar. Baixador de videos TikTok grátis e ilimitado." },
+            { icon: Sparkles, title: "Tirar marca d'água do TikTok", desc: "Remover marca d'água TikTok automaticamente. Tirar a marca d'água do TikTok online com um clique." },
+            { icon: Shield, title: "Sem cadastro necessário", desc: "Para baixar do TikTok não precisa criar conta. Cole o link e salvar video do TikTok instantaneamente." },
+            { icon: Zap, title: "Download rápido", desc: "Salvar videos TikTok pelo link em alta velocidade. Nossos servidores são otimizados para baixar TikTok video rapidamente." },
+            { icon: Music2, title: "Download MP3 e MP4", desc: "Baixar TikTok vídeo em MP4 ou extrair o áudio em MP3. Salva video TikTok com todas as opções de formato." },
+            { icon: Globe, title: "Todos os dispositivos", desc: "TikTok download Android, iPhone e PC. Funciona como app de baixar video do TikTok em qualquer navegador." },
           ].map((f, i) => (
             <motion.div
               key={i}
@@ -166,15 +166,15 @@ export function AdSenseContent() {
               <div className="w-12 h-12 rounded-2xl bg-tiktok-pink/10 flex items-center justify-center">
                 <Smartphone className="w-6 h-6 text-tiktok-pink" />
               </div>
-              <h2 className="text-xl font-bold text-foreground">Como baixar vídeo de TikTok no celular em MP4?</h2>
+              <h2 className="text-xl font-bold text-foreground">Baixar video do TikTok no celular Android e iPhone</h2>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              Se está querendo fazer download em seu celular (Android, iPhone), a maneira mais fácil é utilizar nosso site responsivo. É rápido e gratuito!
+              Quer baixar videos do TikTok no celular? O TikDown funciona perfeitamente como app para baixar videos do TikTok no Android e iPhone. Não precisa instalar nenhum aplicativo de baixar vídeo do TikTok — basta acessar pelo navegador.
             </p>
             <ol className="space-y-2 text-sm text-muted-foreground">
-              <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-tiktok-cyan flex-shrink-0 mt-0.5" /> Abra o vídeo no TikTok e copie o link</li>
-              <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-tiktok-cyan flex-shrink-0 mt-0.5" /> Cole no campo acima e clique em "Baixar Agora"</li>
-              <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-tiktok-cyan flex-shrink-0 mt-0.5" /> Escolha a qualidade e baixe sem marca d'água</li>
+              <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-tiktok-cyan flex-shrink-0 mt-0.5" /> Abra o TikTok e copie o link do vídeo</li>
+              <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-tiktok-cyan flex-shrink-0 mt-0.5" /> Cole no campo e clique em "Baixar Agora"</li>
+              <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-tiktok-cyan flex-shrink-0 mt-0.5" /> Salvar video do TikTok sem marca d'água no celular</li>
             </ol>
           </motion.div>
 
@@ -189,19 +189,19 @@ export function AdSenseContent() {
               <div className="w-12 h-12 rounded-2xl bg-tiktok-cyan/10 flex items-center justify-center">
                 <Monitor className="w-6 h-6 text-tiktok-cyan" />
               </div>
-              <h2 className="text-xl font-bold text-foreground">Baixar vídeo TikTok no PC grátis</h2>
+              <h2 className="text-xl font-bold text-foreground">Baixar TikTok no PC grátis</h2>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              Esta ferramenta é um método simples e conveniente para que o usuário possa baixar vídeos do TikTok sem marca d'água usando qualquer PC ou notebook no navegador.
+              Quer baixar TikTok no PC? Esta ferramenta é o método mais simples para baixar videos do TikTok sem marca d'água usando qualquer computador ou notebook. Funciona no Windows, Mac e Linux direto no navegador.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Não é necessário fazer login, criar contas ou instalar software adicional. Copie o link, cole no campo e faça o download. Além disso, você pode baixar vários vídeos ao mesmo tempo. Também suportamos download em MP3 para que você possa salvar músicas e trilhas sonoras dos vídeos.
+              Não é necessário login, cadastro ou instalar software. Copie o link, cole no campo e baixa video do TikTok sem marca d'água instantaneamente. Também oferecemos download em MP3 para salvar TikTok músicas e trilhas sonoras dos vídeos virais.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Section 5: Final CTA with image */}
+      {/* Section 5: Final CTA */}
       <section className="text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -209,13 +209,13 @@ export function AdSenseContent() {
           viewport={{ once: true }}
           className="flex justify-center mb-6"
         >
-          <img src={tiktokDownloaderImg} alt="TikTok Video Downloader" className="w-full max-w-sm" />
+          <img src={tiktokDownloaderImg} alt="Baixador de videos TikTok - App para baixar videos do TikTok online" className="w-full max-w-sm" />
         </motion.div>
         <h2 className="text-2xl font-extrabold text-foreground mb-3">
-          Comece a Baixar <span className="text-gradient-tiktok">Agora Mesmo!</span>
+          Comece a Baixar Videos TikTok <span className="text-gradient-tiktok">Agora Mesmo!</span>
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          Milhares de pessoas já usam o baixarvideostiktok.com todos os dias para salvar seus vídeos favoritos do TikTok. Junte-se a eles e comece a baixar vídeos sem marca d'água, em alta qualidade e totalmente grátis. Não precisa de cadastro, não precisa instalar nada. Cole o link e baixe!
+          Milhares de pessoas já usam o baixarvideostiktok.com diariamente para baixar videos do TikTok, salvar videos TikTok em MP4 e tirar marca d'água do TikTok online. Junte-se a eles — baixar TikTok vídeo é grátis, rápido e ilimitado. Não precisa de cadastro, não precisa instalar nenhum aplicativo para baixar video do TikTok. Cole o link e baixe!
         </p>
       </section>
     </div>
