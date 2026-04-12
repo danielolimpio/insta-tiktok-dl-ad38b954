@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { AppSidebar } from "@/components/AppSidebar";
+import { Header } from "@/components/Header";
 import { URLInput } from "@/components/URLInput";
 import { VideoCard, VideoInfo } from "@/components/VideoCard";
 import { FeatureCards } from "@/components/FeatureCards";
@@ -50,6 +51,7 @@ const Index = () => {
       <AppSidebar />
 
       <div className="flex-1 lg:ml-[280px] flex flex-col">
+        <Header />
         <main className="flex-1 px-4 sm:px-8 py-8">
           {/* Hero */}
           <motion.div

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Header } from "@/components/Header";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -26,6 +27,7 @@ const ContactPage = () => {
     <div className="min-h-screen flex bg-background">
       <AppSidebar />
       <div className="flex-1 lg:ml-[280px] flex flex-col">
+        <Header />
         <main className="flex-1 px-4 sm:px-8 py-8">
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl mx-auto pt-8 lg:pt-0">
             <div className="text-center mb-12">

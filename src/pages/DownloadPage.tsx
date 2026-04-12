@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Header } from "@/components/Header";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Footer } from "@/components/Footer";
 import { Download, Trash2, Clock, Video, Music, Search, AlertCircle } from "lucide-react";
@@ -50,6 +51,7 @@ const DownloadPage = () => {
     <div className="min-h-screen flex bg-background">
       <AppSidebar />
       <div className="flex-1 lg:ml-[280px] flex flex-col">
+        <Header />
         <main className="flex-1 px-4 sm:px-8 py-8">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
