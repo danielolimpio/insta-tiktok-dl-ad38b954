@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Header } from "@/components/Header";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Footer } from "@/components/Footer";
 import { Settings, Monitor, Download, Globe, Shield, Smartphone, Wifi, HardDrive, Bell, Eye, Palette, Info, CheckCircle2 } from "lucide-react";
@@ -21,6 +22,7 @@ const SettingsPage = () => {
     <div className="min-h-screen flex bg-background">
       <AppSidebar />
       <div className="flex-1 lg:ml-[280px] flex flex-col">
+        <Header />
         <main className="flex-1 px-4 sm:px-8 py-8">
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="text-center max-w-3xl mx-auto mb-10 pt-8 lg:pt-0">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tiktok-cyan/10 text-tiktok-cyan text-xs font-semibold mb-4">
