@@ -2,8 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /configuracoes
 
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
 Sitemap: https://baixarvideostiktok.com/sitemap.xml
