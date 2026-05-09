@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Users, Target, Heart, Zap, Globe, Award } from "lucide-react";
 import heroImg from "@/assets/hero-tiktok.webp";
