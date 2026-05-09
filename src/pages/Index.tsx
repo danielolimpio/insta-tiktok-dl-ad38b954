@@ -60,11 +60,11 @@ const Index = () => {
             className="text-center max-w-3xl mx-auto mb-10 pt-8 lg:pt-0"
           >
             <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground leading-tight">
-              Baixar Videos TikTok{" "}
-              <span className="text-gradient-tiktok">Sem Marca d'Água</span>
+              Baixar Vídeo do TikTok{" "}
+              <span className="text-gradient-tiktok">Sem Marca D'Água</span>
             </h1>
             <p className="text-muted-foreground mt-3 text-base max-w-xl mx-auto">
-              Baixador de videos TikTok grátis para salvar video do TikTok em MP4 e MP3. Rápido, fácil e sem limites — funciona no celular Android, iPhone e PC!
+              TikTok video downloader grátis para <strong className="text-foreground">baixar vídeo do TikTok em MP4 HD</strong>, remover marca d'água e converter para MP3. Funciona em PC, Android e iPhone — sem login, sem instalar app.
             </p>
           </motion.div>
 
