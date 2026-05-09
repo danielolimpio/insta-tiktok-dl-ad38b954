@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Header } from "@/components/Header";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { HelpCircle, Search } from "lucide-react";
 import { useState } from "react";
 import {
@@ -70,6 +71,12 @@ const FAQPage = () => {
 
   return (
     <div className="min-h-screen flex bg-background">
+      <SEO
+        title="FAQ TikTok Downloader | Como Baixar Vídeo do TikTok Sem Marca D'Água"
+        description="Perguntas frequentes sobre o TikTok downloader: como baixar vídeo do TikTok sem marca d'água, converter para MP4 HD, baixar áudio em MP3, segurança e dúvidas técnicas."
+        canonical="https://baixarvideostiktok.com/faq"
+        keywords="faq tiktok downloader, como baixar video tiktok, como remover marca d'agua tiktok, baixar audio tiktok mp3, tiktok download sem marca d'agua, save tiktok video"
+      />
       <AppSidebar />
       <div className="flex-1 lg:ml-[280px] flex flex-col">
         <Header />
@@ -77,13 +84,13 @@ const FAQPage = () => {
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="text-center max-w-3xl mx-auto mb-10 pt-8 lg:pt-0">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tiktok-cyan/10 text-tiktok-cyan text-xs font-semibold mb-4">
               <HelpCircle className="w-3.5 h-3.5" />
-              FAQ — Baixar Videos TikTok
+              FAQ — TikTok Downloader
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground leading-tight">
-              Perguntas Frequentes sobre <span className="text-gradient-tiktok">Baixar Videos TikTok</span>
+              Perguntas Frequentes sobre <span className="text-gradient-tiktok">Baixar Vídeo do TikTok</span>
             </h1>
             <p className="text-muted-foreground mt-3 text-base max-w-xl mx-auto">
-              Tire suas dúvidas sobre como baixar videos do TikTok, salvar video do TikTok sem marca d'água, tirar marca d'água e muito mais.
+              Tudo o que você precisa saber para baixar vídeo do TikTok sem marca d'água, converter para MP4 HD ou MP3, e usar o TikTok downloader com segurança no PC, Android e iPhone.
             </p>
           </motion.div>
 
