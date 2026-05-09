@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Header } from "@/components/Header";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { Download, Trash2, Clock, Video, Music, Search, AlertCircle } from "lucide-react";
 import { VideoInfo } from "@/components/VideoCard";
 import { toast } from "sonner";
