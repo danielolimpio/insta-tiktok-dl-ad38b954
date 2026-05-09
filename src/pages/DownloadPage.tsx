@@ -50,6 +50,12 @@ const DownloadPage = () => {
 
   return (
     <div className="min-h-screen flex bg-background">
+      <SEO
+        title="Histórico de Downloads | Baixar Vídeo do TikTok Sem Marca D'Água"
+        description="Veja seu histórico de vídeos do TikTok baixados. TikTok downloader grátis para baixar vídeo do TikTok em MP4 HD e converter para MP3, sem marca d'água."
+        canonical="https://baixarvideostiktok.com/download"
+        keywords="histórico tiktok downloader, baixar video tiktok, salvar video do tiktok, tiktok mp4 download, tiktok mp3 download, remover marca d'agua tiktok"
+      />
       <AppSidebar />
       <div className="flex-1 lg:ml-[280px] flex flex-col">
         <Header />
@@ -64,10 +70,10 @@ const DownloadPage = () => {
               Histórico Local
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground leading-tight">
-              Histórico de <span className="text-gradient-tiktok">Videos Baixados</span>
+              Histórico de <span className="text-gradient-tiktok">Vídeos do TikTok Baixados</span>
             </h1>
             <p className="text-muted-foreground mt-3 text-base max-w-xl mx-auto">
-              Veja todos os videos TikTok que você já baixou. O histórico é salvo localmente no seu navegador para você acessar seus downloads facilmente.
+              Acompanhe todos os vídeos do TikTok que você baixou em MP4 HD ou MP3. O histórico do TikTok downloader fica salvo localmente no seu navegador — nada vai para servidores.
             </p>
           </motion.div>
 
