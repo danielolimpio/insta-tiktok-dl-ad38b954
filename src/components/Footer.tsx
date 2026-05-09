@@ -27,8 +27,8 @@ export function Footer() {
 
         {/* SEO text */}
         <div className="mt-6 text-center">
-          <p className="text-xs text-muted-foreground/70 max-w-2xl mx-auto leading-relaxed">
-            TikDown — o melhor baixador de videos TikTok online. Baixar videos do TikTok sem marca d'água grátis em MP4 e MP3. Salvar video do TikTok no celular Android, iPhone ou PC. Tirar marca d'água do TikTok com um clique.
+          <p className="text-xs text-muted-foreground/70 max-w-3xl mx-auto leading-relaxed">
+            <strong className="text-secondary-foreground">BaixarVideosTikTok.com</strong> é a ferramenta gratuita para <em>baixar vídeo do TikTok sem marca d'água</em>, <em>converter TikTok para MP4 e MP3</em>, <em>remover marca d'água do TikTok</em> e <em>salvar áudio do TikTok</em> em qualquer dispositivo. Suporte global: TikTok downloader, download TikTok without watermark, save TikTok video, tiktok mp3 download — descargar video tiktok, télécharger vidéo tiktok, tiktok video herunterladen, scaricare video tiktok. Free, no login required.
           </p>
         </div>
 
