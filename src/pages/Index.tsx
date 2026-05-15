@@ -9,6 +9,7 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { FAQSection } from "@/components/FAQSection";
 import { AdSenseContent } from "@/components/AdSenseContent";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { fetchTikTokVideo } from "@/lib/tiktok-api";
 import { toast } from "sonner";
 
@@ -48,6 +49,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex bg-background">
+      <SEO
+        title="Baixar Vídeo do TikTok Sem Marca D'Água | TikTok Downloader MP4 MP3 Grátis"
+        description="Baixar vídeo do TikTok sem marca d'água em MP4 HD e áudio em MP3. TikTok video downloader grátis e online — funciona em PC, Android e iPhone. Sem cadastro, sem instalar app."
+        canonical="https://baixarvideostiktok.com/"
+        keywords="baixar video tiktok, baixar tiktok sem marca d'agua, tiktok downloader, tiktok mp3, tiktok mp4 hd, remover marca d'agua tiktok, save tiktok video, download tiktok without watermark"
+      />
       <AppSidebar />
 
       <div className="flex-1 lg:ml-[280px] flex flex-col">

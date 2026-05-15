@@ -14,7 +14,11 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} (.+)/$
 RewriteRule ^(.*)/$ /$1 [L,R=301]
 
-# 4. SPA fallback - serve index.html for client-side routes
+# 4. Redirect deprecated/inexistent routes (avoid duplicate-content from SPA fallback)
+RewriteRule ^video/?$ /download [L,R=301]
+RewriteRule ^audio/?$ /download [L,R=301]
+
+# 5. SPA fallback - serve index.html for client-side routes
 RewriteRule ^index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
