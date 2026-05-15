@@ -15,6 +15,8 @@ import TermsPage from "./pages/TermsPage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
 import ResponsibleUsePage from "./pages/ResponsibleUsePage.tsx";
+import VideoPage from "./pages/VideoPage.tsx";
+import AudioPage from "./pages/AudioPage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +30,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/download" element={<DownloadPage />} />
+          <Route path="/video" element={<VideoPage />} />
+          <Route path="/audio" element={<AudioPage />} />
           <Route path="/configuracoes" element={<SettingsPage />} />
           <Route path="/ajuda" element={<HelpPage />} />
           <Route path="/faq" element={<FAQPage />} />
