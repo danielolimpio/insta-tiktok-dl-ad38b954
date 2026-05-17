@@ -84,6 +84,8 @@ const AudioPage = () => {
             </p>
           </motion.div>
 
+          <PageBreadcrumbs items={[{ name: "Baixar Áudio MP3", url: "/audio" }]} />
+
           <URLInput onSubmit={handleSubmit} isLoading={isLoading} />
 
           {videos.length > 0 && (
