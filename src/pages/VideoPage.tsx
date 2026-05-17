@@ -84,6 +84,8 @@ const VideoPage = () => {
             </p>
           </motion.div>
 
+          <PageBreadcrumbs items={[{ name: "Baixar Vídeo MP4 HD", url: "/video" }]} />
+
           <URLInput onSubmit={handleSubmit} isLoading={isLoading} />
 
           {videos.length > 0 && (
