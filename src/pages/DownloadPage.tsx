@@ -75,7 +75,7 @@ const DownloadPage = () => {
               Histórico de <span className="text-gradient-tiktok">Vídeos do TikTok Baixados</span>
             </h1>
             <p className="text-muted-foreground mt-3 text-base max-w-xl mx-auto">
-              Acompanhe todos os vídeos do TikTok que você baixou em MP4 HD ou MP3. O histórico do TikTok downloader fica salvo localmente no seu navegador — nada vai para servidores.
+              Acompanhe todos os vídeos do TikTok que você baixou em MP4 HD ou MP3. O histórico do TikTok downloader fica salvo localmente no seu navegador — nada vai para servidores. Para novos downloads, use o <Link to="/video" className="text-tiktok-cyan hover:underline font-medium">TikTok video downloader em MP4</Link> ou o <Link to="/audio" className="text-tiktok-cyan hover:underline font-medium">conversor de TikTok para MP3</Link>.
             </p>
           </motion.div>
 
