@@ -133,6 +133,10 @@ const VideoPage = () => {
               </div>
             </div>
           </section>
+
+          <PageFAQ id="video" title="Perguntas frequentes sobre baixar vídeo do TikTok" items={VIDEO_FAQ} />
+
+          <RelatedTools exclude="video" />
         </main>
         <Footer />
       </div>
