@@ -7,6 +7,8 @@ import { SEO } from "@/components/SEO";
 import { Download, Trash2, Clock, Video, Music, Search, AlertCircle } from "lucide-react";
 import { VideoInfo } from "@/components/VideoCard";
 import { toast } from "sonner";
+import { Link } from "react-router-dom";
+import { RelatedTools } from "@/components/RelatedTools";
 
 const HISTORY_KEY = "tikdown_history";
 
@@ -73,7 +75,7 @@ const DownloadPage = () => {
               Histórico de <span className="text-gradient-tiktok">Vídeos do TikTok Baixados</span>
             </h1>
             <p className="text-muted-foreground mt-3 text-base max-w-xl mx-auto">
-              Acompanhe todos os vídeos do TikTok que você baixou em MP4 HD ou MP3. O histórico do TikTok downloader fica salvo localmente no seu navegador — nada vai para servidores.
+              Acompanhe todos os vídeos do TikTok que você baixou em MP4 HD ou MP3. O histórico do TikTok downloader fica salvo localmente no seu navegador — nada vai para servidores. Para novos downloads, use o <Link to="/video" className="text-tiktok-cyan hover:underline font-medium">TikTok video downloader em MP4</Link> ou o <Link to="/audio" className="text-tiktok-cyan hover:underline font-medium">conversor de TikTok para MP3</Link>.
             </p>
           </motion.div>
 
@@ -192,6 +194,17 @@ const DownloadPage = () => {
               </div>
             )}
           </div>
+          {/* SEO Content + Internal Linking */}
+          <section className="mt-16 max-w-3xl mx-auto space-y-6">
+            <article>
+              <h2 className="text-2xl font-bold text-foreground mb-3">Continue baixando do TikTok</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Se quiser <Link to="/video" className="text-tiktok-cyan hover:underline font-medium">baixar vídeo do TikTok em 1080p Full HD</Link> sem marca d'água, acesse nossa ferramenta dedicada de MP4. Para extrair apenas a trilha sonora, use o <Link to="/audio" className="text-tiktok-cyan hover:underline font-medium">extrator de áudio TikTok MP3</Link> — ideal para músicas virais, ringtones e edições. Dúvidas? Veja a <Link to="/faq" className="text-tiktok-cyan hover:underline font-medium">FAQ do TikDown</Link> com tutoriais passo a passo.
+              </p>
+            </article>
+          </section>
+
+          <RelatedTools exclude="download" />
         </main>
         <Footer />
       </div>

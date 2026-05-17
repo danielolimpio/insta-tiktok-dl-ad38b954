@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import { PageBreadcrumbs } from "@/components/PageBreadcrumbs";
 import { PageFAQ } from "@/components/PageFAQ";
 import { RelatedTools } from "@/components/RelatedTools";
+import { MediaSchema } from "@/components/MediaSchema";
 
 const AUDIO_FAQ = [
   { q: "Como baixar áudio do TikTok em MP3?", a: "Cole o link do vídeo do TikTok que contém a música ou som desejado, clique em Baixar Agora e selecione a opção Áudio MP3. O TikDown entrega o arquivo MP3 em alta qualidade, pronto para salvar no PC ou celular." },
@@ -90,6 +91,7 @@ const AudioPage = () => {
 
           {videos.length > 0 && (
             <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-8 max-w-3xl mx-auto">
+              <MediaSchema videos={videos} type="audio" pageUrl="https://baixarvideostiktok.com/audio" />
               <h2 className="text-xl font-bold text-foreground mb-4">Áudio Pronto para Download</h2>
               <p className="text-sm text-muted-foreground mb-4">Use o botão "Áudio MP3" no card abaixo para baixar apenas a faixa sonora.</p>
               <div className="space-y-3">

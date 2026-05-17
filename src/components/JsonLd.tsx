@@ -7,7 +7,8 @@ interface JsonLdProps {
 
 export function JsonLd({ id, data }: JsonLdProps) {
   useEffect(() => {
-    const scriptId = `jsonld-${id}`;
+    const safeId = id.replace(/[^a-zA-Z0-9_-]/g, "_");
+    const scriptId = `jsonld-${safeId}`;
     let el = document.getElementById(scriptId) as HTMLScriptElement | null;
     if (!el) {
       el = document.createElement("script");
