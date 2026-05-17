@@ -134,6 +134,10 @@ const AudioPage = () => {
               </div>
             </div>
           </section>
+
+          <PageFAQ id="audio" title="Perguntas frequentes sobre baixar áudio do TikTok" items={AUDIO_FAQ} />
+
+          <RelatedTools exclude="audio" />
         </main>
         <Footer />
       </div>
