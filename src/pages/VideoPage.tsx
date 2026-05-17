@@ -9,6 +9,18 @@ import { VideoCard, VideoInfo } from "@/components/VideoCard";
 import { fetchTikTokVideo } from "@/lib/tiktok-api";
 import { toast } from "sonner";
 import { Video, Sparkles, Shield, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
+import { PageBreadcrumbs } from "@/components/PageBreadcrumbs";
+import { PageFAQ } from "@/components/PageFAQ";
+import { RelatedTools } from "@/components/RelatedTools";
+
+const VIDEO_FAQ = [
+  { q: "Como baixar vídeo do TikTok em MP4 HD sem marca d'água?", a: "Copie o link do vídeo no TikTok, cole no campo acima e clique em Baixar Agora. Em segundos entregamos o arquivo MP4 em 1080p Full HD sem o logo do TikTok, pronto para salvar no PC, Android ou iPhone." },
+  { q: "É possível baixar vídeos do TikTok em 1080p Full HD?", a: "Sim. Quando o criador publicou em alta resolução, o TikDown entrega o vídeo em 1080p Full HD. Vídeos em qualidade menor são entregues na resolução máxima disponível na fonte original do TikTok." },
+  { q: "Preciso instalar algum app para baixar vídeo do TikTok?", a: "Não. Nosso TikTok video downloader é 100% online, funciona no navegador do PC (Windows, Mac, Linux) e do celular (Android, iPhone). Não há instalação de APK, extensão ou software." },
+  { q: "O download de vídeos do TikTok é gratuito e ilimitado?", a: "Sim. Você pode baixar quantos vídeos do TikTok quiser, sem cadastro, sem login e sem limite diário. Todo o processo é gratuito." },
+  { q: "Posso baixar apenas o áudio em vez do vídeo?", a: "Sim. Se preferir somente a faixa sonora, use a página dedicada de áudio em /audio para extrair o MP3 do TikTok em alta qualidade." },
+];
 
 const HISTORY_KEY = "tikdown_history";
 
