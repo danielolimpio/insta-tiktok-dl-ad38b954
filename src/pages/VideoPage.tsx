@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import { PageBreadcrumbs } from "@/components/PageBreadcrumbs";
 import { PageFAQ } from "@/components/PageFAQ";
 import { RelatedTools } from "@/components/RelatedTools";
+import { MediaSchema } from "@/components/MediaSchema";
 
 const VIDEO_FAQ = [
   { q: "Como baixar vídeo do TikTok em MP4 HD sem marca d'água?", a: "Copie o link do vídeo no TikTok, cole no campo acima e clique em Baixar Agora. Em segundos entregamos o arquivo MP4 em 1080p Full HD sem o logo do TikTok, pronto para salvar no PC, Android ou iPhone." },
