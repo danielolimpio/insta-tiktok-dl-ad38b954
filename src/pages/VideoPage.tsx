@@ -91,6 +91,7 @@ const VideoPage = () => {
 
           {videos.length > 0 && (
             <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-8 max-w-3xl mx-auto">
+              <MediaSchema videos={videos} type="video" pageUrl="https://baixarvideostiktok.com/video" />
               <h2 className="text-xl font-bold text-foreground mb-4">Vídeo Pronto para Download</h2>
               <div className="space-y-3">
                 {videos.map((v) => (
