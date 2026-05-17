@@ -194,6 +194,17 @@ const DownloadPage = () => {
               </div>
             )}
           </div>
+          {/* SEO Content + Internal Linking */}
+          <section className="mt-16 max-w-3xl mx-auto space-y-6">
+            <article>
+              <h2 className="text-2xl font-bold text-foreground mb-3">Continue baixando do TikTok</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Se quiser <Link to="/video" className="text-tiktok-cyan hover:underline font-medium">baixar vídeo do TikTok em 1080p Full HD</Link> sem marca d'água, acesse nossa ferramenta dedicada de MP4. Para extrair apenas a trilha sonora, use o <Link to="/audio" className="text-tiktok-cyan hover:underline font-medium">extrator de áudio TikTok MP3</Link> — ideal para músicas virais, ringtones e edições. Dúvidas? Veja a <Link to="/faq" className="text-tiktok-cyan hover:underline font-medium">FAQ do TikDown</Link> com tutoriais passo a passo.
+              </p>
+            </article>
+          </section>
+
+          <RelatedTools exclude="download" />
         </main>
         <Footer />
       </div>
