@@ -7,6 +7,8 @@ import { SEO } from "@/components/SEO";
 import { Download, Trash2, Clock, Video, Music, Search, AlertCircle } from "lucide-react";
 import { VideoInfo } from "@/components/VideoCard";
 import { toast } from "sonner";
+import { Link } from "react-router-dom";
+import { RelatedTools } from "@/components/RelatedTools";
 
 const HISTORY_KEY = "tikdown_history";
 
