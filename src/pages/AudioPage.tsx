@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import { PageBreadcrumbs } from "@/components/PageBreadcrumbs";
 import { PageFAQ } from "@/components/PageFAQ";
 import { RelatedTools } from "@/components/RelatedTools";
+import { MediaSchema } from "@/components/MediaSchema";
 
 const AUDIO_FAQ = [
   { q: "Como baixar áudio do TikTok em MP3?", a: "Cole o link do vídeo do TikTok que contém a música ou som desejado, clique em Baixar Agora e selecione a opção Áudio MP3. O TikDown entrega o arquivo MP3 em alta qualidade, pronto para salvar no PC ou celular." },
