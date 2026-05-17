@@ -112,7 +112,7 @@ const AudioPage = () => {
             <article>
               <h2 className="text-2xl font-bold text-foreground mb-3">Para que serve baixar áudio do TikTok</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Baixar <strong className="text-foreground">músicas do TikTok em MP3</strong> é útil para criar ringtones personalizados, montar playlists com sons virais, usar trilhas em edições de vídeo no CapCut ou InShot, gravar narrações como base para podcasts e arquivar áudios que podem desaparecer da plataforma. O TikDown extrai o áudio direto da fonte, mantendo a qualidade original.
+                Baixar <strong className="text-foreground">músicas do TikTok em MP3</strong> é útil para criar ringtones personalizados, montar playlists com sons virais, usar trilhas em edições de vídeo no CapCut ou InShot, gravar narrações como base para podcasts e arquivar áudios que podem desaparecer da plataforma. Se preferir o clipe inteiro, veja como <Link to="/video" className="text-tiktok-cyan hover:underline font-medium">baixar vídeo do TikTok em MP4 HD</Link> ou acesse o <Link to="/download" className="text-tiktok-cyan hover:underline font-medium">histórico de downloads</Link>.
               </p>
             </article>
 
