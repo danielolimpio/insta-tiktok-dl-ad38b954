@@ -111,7 +111,7 @@ const VideoPage = () => {
             <article>
               <h2 className="text-2xl font-bold text-foreground mb-3">Qualidade do vídeo TikTok baixado</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Nosso baixador de vídeos TikTok suporta múltiplas resoluções: <strong className="text-foreground">1080p (Full HD)</strong>, 720p (HD) e 480p (SD). A qualidade depende do upload original feito pelo criador no TikTok. Vídeos gravados em 4K são entregues em 1080p, padrão máximo da plataforma TikTok.
+                Nosso baixador de vídeos TikTok suporta múltiplas resoluções: <strong className="text-foreground">1080p (Full HD)</strong>, 720p (HD) e 480p (SD). A qualidade depende do upload original feito pelo criador no TikTok. Vídeos gravados em 4K são entregues em 1080p, padrão máximo da plataforma TikTok. Se você quer apenas a trilha sonora, veja como <Link to="/audio" className="text-tiktok-cyan hover:underline font-medium">baixar áudio do TikTok em MP3</Link> ou acesse seu <Link to="/download" className="text-tiktok-cyan hover:underline font-medium">histórico de vídeos baixados</Link>.
               </p>
             </article>
 
