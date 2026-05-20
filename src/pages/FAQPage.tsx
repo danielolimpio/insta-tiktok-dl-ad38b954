@@ -72,8 +72,9 @@ const FAQPage = () => {
   return (
     <div className="min-h-screen flex bg-background">
       <SEO
-        title="FAQ TikTok Downloader | Como Baixar Vídeo do TikTok Sem Marca D'Água"
-        description="Perguntas frequentes sobre o TikTok downloader: como baixar vídeo do TikTok sem marca d'água, converter para MP4 HD, baixar áudio em MP3, segurança e dúvidas técnicas."
+        title="FAQ TikTok Downloader | Dúvidas e Respostas"
+        description="Perguntas frequentes sobre como baixar vídeo do TikTok sem marca d'água em MP4 HD, converter para MP3 e usar o TikTok downloader com segurança."
+
         canonical="https://baixarvideostiktok.com/faq"
         keywords="faq tiktok downloader, como baixar video tiktok, como remover marca d'agua tiktok, baixar audio tiktok mp3, tiktok download sem marca d'agua, save tiktok video"
       />
