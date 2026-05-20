@@ -1,12 +1,18 @@
 import { Header } from "@/components/Header";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Shield, Eye, Lock, Server, UserCheck, Mail } from "lucide-react";
 
 const PrivacyPage = () => {
   return (
     <div className="min-h-screen flex bg-background">
+      <SEO
+        title="Política de Privacidade | TikDown"
+        description="Saiba como o TikDown protege seus dados ao usar nosso TikTok downloader. Não coletamos dados pessoais nem armazenamos os vídeos baixados."
+        canonical="https://baixarvideostiktok.com/privacidade"
+      />
       <AppSidebar />
       <div className="flex-1 lg:ml-[280px] flex flex-col">
         <Header />

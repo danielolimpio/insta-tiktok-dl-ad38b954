@@ -59,7 +59,7 @@ const AudioPage = () => {
   return (
     <div className="min-h-screen flex bg-background">
       <SEO
-        title="Baixar Áudio do TikTok em MP3 Grátis | TikTok MP3 Downloader"
+        title="Baixar Áudio do TikTok em MP3 Grátis | TikDown"
         description="Baixar áudio do TikTok em MP3 grátis e sem cadastro. Extraia músicas, sons virais e narrações do TikTok em alta qualidade — funciona em PC, Android e iPhone."
         canonical="https://baixarvideostiktok.com/audio"
         keywords="baixar audio tiktok, baixar musica tiktok, tiktok mp3, tiktok mp3 download, tiktok audio downloader, baixar som do tiktok, extrair audio tiktok, tiktok music download, salvar musica tiktok, ringtone tiktok"

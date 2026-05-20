@@ -10,8 +10,9 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen flex bg-background">
       <SEO
-        title="Sobre o TikDown | TikTok Video Downloader Sem Marca D'Água Grátis"
-        description="Conheça o BaixarVideosTikTok.com: TikTok video downloader gratuito para baixar vídeo do TikTok sem marca d'água em MP4 HD e MP3. Sem login, sem instalar app."
+        title="Sobre o TikDown | TikTok Downloader Grátis"
+        description="Conheça o TikDown: TikTok downloader gratuito para baixar vídeo do TikTok sem marca d'água em MP4 HD e MP3. Sem login, sem instalar app."
+
         canonical="https://baixarvideostiktok.com/sobre"
         keywords="sobre tiktok downloader, baixarvideostiktok, baixar video tiktok, tiktok video downloader, salvar video do tiktok, remover marca d'agua tiktok, baixar audio tiktok"
       />

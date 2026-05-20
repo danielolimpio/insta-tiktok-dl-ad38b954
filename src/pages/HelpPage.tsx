@@ -2,12 +2,18 @@ import { motion } from "framer-motion";
 import { Header } from "@/components/Header";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { FAQSection } from "@/components/FAQSection";
 import { MessageCircle, Mail, Shield, BookOpen, AlertTriangle, CheckCircle2, Smartphone, Monitor, Globe, Link, Download, Search, Lightbulb } from "lucide-react";
 
 const HelpPage = () => {
   return (
     <div className="min-h-screen flex bg-background">
+      <SEO
+        title="Central de Ajuda | Como Usar o TikDown"
+        description="Tutoriais e dicas para baixar vídeo do TikTok sem marca d'água em MP4 HD ou MP3. Aprenda a usar o TikDown no PC, Android e iPhone."
+        canonical="https://baixarvideostiktok.com/ajuda"
+      />
       <AppSidebar />
       <div className="flex-1 lg:ml-[280px] flex flex-col">
         <Header />
