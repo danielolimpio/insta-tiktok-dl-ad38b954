@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Header } from "@/components/Header";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Mail, MessageSquare, Send, MapPin, Clock, Globe } from "lucide-react";
 import { toast } from "sonner";
@@ -25,6 +26,11 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen flex bg-background">
+      <SEO
+        title="Contato | TikDown TikTok Downloader"
+        description="Fale com a equipe do TikDown. Envie dúvidas, sugestões ou parcerias sobre o nosso TikTok downloader gratuito para baixar vídeos sem marca d'água."
+        canonical="https://baixarvideostiktok.com/contato"
+      />
       <AppSidebar />
       <div className="flex-1 lg:ml-[280px] flex flex-col">
         <Header />

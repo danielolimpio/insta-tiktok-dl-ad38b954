@@ -1,12 +1,18 @@
 import { Header } from "@/components/Header";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { motion } from "framer-motion";
 import { FileText, AlertTriangle, Scale, Ban, RefreshCw, Gavel } from "lucide-react";
 
 const TermsPage = () => {
   return (
     <div className="min-h-screen flex bg-background">
+      <SEO
+        title="Termos de Uso | TikDown TikTok Downloader"
+        description="Leia os termos de uso do TikDown, o baixador de vídeos do TikTok gratuito. Regras, direitos autorais e responsabilidades ao baixar conteúdo."
+        canonical="https://baixarvideostiktok.com/termos"
+      />
       <AppSidebar />
       <div className="flex-1 lg:ml-[280px] flex flex-col">
         <Header />

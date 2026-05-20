@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { AppSidebar } from "@/components/AppSidebar";
+import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import {
   AlertTriangle, Shield, BookOpen, Heart, GraduationCap, Lock, Ban,
@@ -71,6 +72,11 @@ const ResponsibleUsePage = () => {
 
   return (
     <div className="min-h-screen flex bg-background">
+      <SEO
+        title="Uso Responsável | TikDown TikTok Downloader"
+        description="Diretrizes de uso responsável do TikDown: respeite direitos autorais, créditos dos criadores e a política do TikTok ao baixar vídeos."
+        canonical="https://baixarvideostiktok.com/uso-responsavel"
+      />
       <AppSidebar />
       <div className="flex-1 lg:ml-[280px] flex flex-col">
         <main className="flex-1 px-4 sm:px-8 py-8">

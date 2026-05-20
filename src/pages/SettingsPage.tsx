@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Header } from "@/components/Header";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { Settings, Monitor, Download, Globe, Shield, Smartphone, Wifi, HardDrive, Bell, Eye, Palette, Info, CheckCircle2 } from "lucide-react";
 
 const SettingsPage = () => {
@@ -20,6 +21,11 @@ const SettingsPage = () => {
 
   return (
     <div className="min-h-screen flex bg-background">
+      <SEO
+        title="Configurações | TikDown TikTok Downloader"
+        description="Personalize suas preferências de download no TikDown: qualidade padrão, formato MP4 ou MP3 e opções do TikTok downloader."
+        canonical="https://baixarvideostiktok.com/configuracoes"
+      />
       <AppSidebar />
       <div className="flex-1 lg:ml-[280px] flex flex-col">
         <Header />
