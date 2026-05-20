@@ -53,8 +53,9 @@ const DownloadPage = () => {
   return (
     <div className="min-h-screen flex bg-background">
       <SEO
-        title="Histórico de Downloads | Baixar Vídeo do TikTok Sem Marca D'Água"
-        description="Veja seu histórico de vídeos do TikTok baixados. TikTok downloader grátis para baixar vídeo do TikTok em MP4 HD e converter para MP3, sem marca d'água."
+        title="Histórico de Downloads | TikDown"
+        description="Veja seu histórico de vídeos do TikTok baixados. TikTok downloader grátis para baixar vídeo em MP4 HD e converter para MP3, sem marca d'água."
+
         canonical="https://baixarvideostiktok.com/download"
         keywords="histórico tiktok downloader, baixar video tiktok, salvar video do tiktok, tiktok mp4 download, tiktok mp3 download, remover marca d'agua tiktok"
       />
