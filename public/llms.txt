@@ -1,0 +1,19 @@
+# BaixarVideosTikTok.com (TikDown)
+
+> TikTok video downloader gratuito para baixar vídeo do TikTok sem marca d'água em MP4 HD e converter áudio para MP3. Funciona online em PC, Android e iPhone — sem login, sem instalar app.
+
+BaixarVideosTikTok.com é um TikTok downloader online 100% gratuito que permite salvar vídeos do TikTok em alta qualidade (MP4 HD), remover a marca d'água automaticamente e extrair o áudio em MP3. A ferramenta funciona diretamente no navegador, sem necessidade de cadastro ou instalação de aplicativos, em qualquer dispositivo: Windows, Mac, Linux, Android e iPhone.
+
+## Pages
+
+- [Home](/): TikTok downloader principal — cole o link do vídeo e baixe em MP4 HD ou MP3.
+- [Baixar Vídeo](/video): Ferramenta dedicada para baixar vídeo do TikTok sem marca d'água em MP4 HD.
+- [Baixar Áudio](/audio): Extrator de áudio do TikTok — converte vídeos em MP3 grátis.
+- [Histórico](/download): Visualize e gerencie seus downloads recentes de vídeos e áudios do TikTok.
+- [FAQ](/faq): Respostas para dúvidas comuns sobre como baixar vídeo do TikTok, MP3, qualidade e segurança.
+- [Sobre](/sobre): Conheça o TikDown, nossa missão e por que somos o melhor TikTok video downloader.
+- [Contato](/contato): Entre em contato com a equipe do TikDown para suporte, sugestões ou parcerias.
+- [Ajuda](/ajuda): Guia completo de como usar o TikTok downloader em diferentes dispositivos.
+- [Privacidade](/privacidade): Política de privacidade — como protegemos seus dados ao usar nosso serviço.
+- [Termos](/termos): Termos de uso do TikTok downloader e condições de utilização do serviço.
+- [Uso Responsável](/uso-responsavel): Diretrizes para uso ético e responsável do conteúdo baixado do TikTok.
