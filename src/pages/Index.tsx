@@ -50,8 +50,9 @@ const Index = () => {
   return (
     <div className="min-h-screen flex bg-background">
       <SEO
-        title="Baixar Vídeo do TikTok Sem Marca D'Água | TikTok Downloader MP4 MP3 Grátis"
-        description="Baixar vídeo do TikTok sem marca d'água em MP4 HD e áudio em MP3. TikTok video downloader grátis e online — funciona em PC, Android e iPhone. Sem cadastro, sem instalar app."
+        title="Baixar Vídeo do TikTok Sem Marca D'Água | TikDown"
+        description="Baixe vídeos do TikTok sem marca d'água em MP4 HD ou MP3. Grátis, online e sem cadastro — funciona em PC, Android e iPhone."
+
         canonical="https://baixarvideostiktok.com/"
         keywords="baixar video tiktok, baixar tiktok sem marca d'agua, tiktok downloader, tiktok mp3, tiktok mp4 hd, remover marca d'agua tiktok, save tiktok video, download tiktok without watermark"
       />
