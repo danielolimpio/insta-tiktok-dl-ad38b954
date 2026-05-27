@@ -17,6 +17,7 @@ import ContactPage from "./pages/ContactPage.tsx";
 import ResponsibleUsePage from "./pages/ResponsibleUsePage.tsx";
 import VideoPage from "./pages/VideoPage.tsx";
 import AudioPage from "./pages/AudioPage.tsx";
+import { LocalizedHomeRoute } from "./pages/LocalizedHome.tsx";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,13 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
+          
+          <Route path="/en" element={<LocalizedHomeRoute />} />
+          <Route path="/id" element={<LocalizedHomeRoute />} />
+          <Route path="/es" element={<LocalizedHomeRoute />} />
+          <Route path="/hi" element={<LocalizedHomeRoute />} />
+          <Route path="/tr" element={<LocalizedHomeRoute />} />
+          <Route path="/pt" element={<LocalizedHomeRoute />} />
           <Route path="/download" element={<DownloadPage />} />
           <Route path="/video" element={<VideoPage />} />
           <Route path="/audio" element={<AudioPage />} />
