@@ -9,7 +9,10 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { FAQSection } from "@/components/FAQSection";
 import { AdSenseContent } from "@/components/AdSenseContent";
 import { Footer } from "@/components/Footer";
-import { SEO } from "@/components/SEO";
+import { SEO, type HreflangAlternate } from "@/components/SEO";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { LOCALES, LOCALE_META, SITE_URL, localeUrl } from "@/i18n/config";
+import { T } from "@/i18n/translations";
 import { fetchTikTokVideo } from "@/lib/tiktok-api";
 import { toast } from "sonner";
 
@@ -52,14 +55,24 @@ const Index = () => {
       <SEO
         title="Baixar Vídeo do TikTok Sem Marca D'Água | TikDown"
         description="Baixe vídeos do TikTok sem marca d'água em MP4 HD ou MP3. Grátis, online e sem cadastro — funciona em PC, Android e iPhone."
-
         canonical="https://baixarvideostiktok.com/"
+        ogLocale="pt_BR"
+        htmlLang="pt-BR"
         keywords="baixar video tiktok, baixar tiktok sem marca d'agua, tiktok downloader, tiktok mp3, tiktok mp4 hd, remover marca d'agua tiktok, save tiktok video, download tiktok without watermark"
+        alternates={[
+          ...LOCALES.map((l) => ({ hreflang: LOCALE_META[l].bcp47, href: localeUrl(l) })),
+          { hreflang: "x-default", href: `${SITE_URL}/` },
+        ] as HreflangAlternate[]}
       />
       <AppSidebar />
 
       <div className="flex-1 lg:ml-[280px] flex flex-col">
         <Header />
+        <div className="border-b border-border bg-background/50">
+          <div className="px-4 sm:px-8 py-2 flex justify-end">
+            <LanguageSwitcher current="pt" label={T.pt.switchLanguage} />
+          </div>
+        </div>
         <main className="flex-1 px-4 sm:px-8 py-8">
           {/* Hero */}
           <motion.div
