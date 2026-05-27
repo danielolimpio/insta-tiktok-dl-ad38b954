@@ -6,7 +6,12 @@ BaixarVideosTikTok.com é um TikTok downloader online 100% gratuito que permite 
 
 ## Pages
 
-- [Home](/): TikTok downloader principal — cole o link do vídeo e baixe em MP4 HD ou MP3.
+- [Home (pt-BR)](/): TikTok downloader principal — cole o link do vídeo e baixe em MP4 HD ou MP3.
+- [Home (en-US)](/en): TikTok video downloader — download TikTok videos without watermark in MP4 HD.
+- [Home (id-ID)](/id): Pengunduh video TikTok — download video TikTok tanpa watermark dalam MP4 HD.
+- [Home (es-MX)](/es): Descargador de TikTok — descarga videos de TikTok sin marca de agua en MP4 HD.
+- [Home (hi-IN)](/hi): TikTok video downloader — download TikTok videos without watermark in MP4 HD.
+- [Home (tr-TR)](/tr): TikTok video indirici — filigransız MP4 HD olarak TikTok videolarını indir.
 - [Baixar Vídeo](/video): Ferramenta dedicada para baixar vídeo do TikTok sem marca d'água em MP4 HD.
 - [Baixar Áudio](/audio): Extrator de áudio do TikTok — converte vídeos em MP3 grátis.
 - [Histórico](/download): Visualize e gerencie seus downloads recentes de vídeos e áudios do TikTok.
