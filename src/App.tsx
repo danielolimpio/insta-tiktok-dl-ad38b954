@@ -30,7 +30,7 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/:lang(en|id|es|hi|tr)" element={<LocalizedHomeRoute />} />
+          
           <Route path="/en" element={<LocalizedHomeRoute />} />
           <Route path="/id" element={<LocalizedHomeRoute />} />
           <Route path="/es" element={<LocalizedHomeRoute />} />
