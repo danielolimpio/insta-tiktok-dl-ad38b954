@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Bell, Sun, Moon, HelpCircle } from "lucide-react";
 import { VideoInfo } from "@/components/VideoCard";
+import { proxyImage } from "@/lib/image-proxy";
 
 const HISTORY_KEY = "tikdown_history";
 
