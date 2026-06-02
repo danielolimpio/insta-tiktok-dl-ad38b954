@@ -32,7 +32,7 @@ export function AppSidebar() {
 
   const sidebar = (
     <div className="flex flex-col h-full bg-tiktok-black text-sidebar-foreground">
-      <div className="p-6 flex items-center gap-3">
+      <div className="p-6 flex items-center gap-3 cursor-pointer" onClick={() => { navigate("/"); setMobileOpen(false); }}>
         <img src={logo} alt="TikDown" className="w-10 h-10 rounded-xl object-cover" />
         <div>
           <h1 className="text-lg font-bold text-sidebar-foreground">TikDown</h1>
