@@ -7,6 +7,8 @@ import logoInstagram from "@/assets/logo-instagram.png";
 import logoFacebook from "@/assets/logo-facebook.png";
 import logoYoutube from "@/assets/logo-youtube.png";
 import logoKwai from "@/assets/logo-kwai.png";
+import batepapoLogo from "@/assets/batepapo-logo.png";
+import chatBubbles from "@/assets/chat-bubbles.gif";
 
 const navItems = [
   { label: "Início", icon: Home, path: "/" },
@@ -83,6 +85,24 @@ export function AppSidebar() {
       </nav>
 
       <div className="p-6 border-t border-sidebar-border">
+        <a
+          href="https://batepapogratis.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 mb-3 group"
+          aria-label="Visite BatePapo Grátis"
+        >
+          <img
+            src={batepapoLogo}
+            alt="BatePapo Grátis"
+            className="h-10 w-auto object-contain group-hover:scale-105 transition-transform"
+          />
+          <img
+            src={chatBubbles}
+            alt="Bate Papo"
+            className="h-10 w-auto object-contain group-hover:scale-105 transition-transform"
+          />
+        </a>
         <p className="text-xs text-muted-foreground text-center">v1.0.0 • TikDown</p>
       </div>
     </div>
