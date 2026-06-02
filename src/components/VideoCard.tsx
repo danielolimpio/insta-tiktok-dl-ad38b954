@@ -69,11 +69,10 @@ export function VideoCard({ video }: { video: VideoInfo }) {
         <div className="h-48 w-full overflow-hidden rounded-xl bg-muted sm:h-24 sm:w-[140px]">
           {video.thumbnail ? (
             <img
-              src={video.thumbnail}
+              src={proxyImage(video.thumbnail)}
               alt={video.title}
               className="w-full h-full object-cover"
               loading="lazy"
-              crossOrigin="anonymous"
               referrerPolicy="no-referrer"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
