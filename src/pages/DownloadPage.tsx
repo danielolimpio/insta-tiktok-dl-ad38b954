@@ -9,6 +9,7 @@ import { VideoInfo } from "@/components/VideoCard";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
 import { RelatedTools } from "@/components/RelatedTools";
+import { proxyImage } from "@/lib/image-proxy";
 
 const HISTORY_KEY = "tikdown_history";
 
@@ -161,11 +162,10 @@ const DownloadPage = () => {
                     <div className="w-16 h-16 rounded-lg bg-muted overflow-hidden shrink-0">
                       {video.thumbnail ? (
                         <img
-                          src={video.thumbnail}
+                          src={proxyImage(video.thumbnail)}
                           alt={video.title}
                           className="w-full h-full object-cover"
                           loading="lazy"
-                          crossOrigin="anonymous"
                           referrerPolicy="no-referrer"
                           onError={(e) => {
                             (e.target as HTMLImageElement).style.display = "none";

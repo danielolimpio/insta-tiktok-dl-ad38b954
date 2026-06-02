@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Bell, Sun, Moon, HelpCircle } from "lucide-react";
 import { VideoInfo } from "@/components/VideoCard";
+import { proxyImage } from "@/lib/image-proxy";
 
 const HISTORY_KEY = "tikdown_history";
 
@@ -103,7 +104,16 @@ export function Header() {
                     {downloads.slice(0, 10).map((d) => (
                       <div key={d.id} className="p-3 flex items-center gap-3 hover:bg-muted/50 transition-colors">
                         {d.thumbnail ? (
-                          <img src={d.thumbnail} alt="" className="w-10 h-10 rounded-lg object-cover flex-shrink-0" />
+                          <img
+                            src={proxyImage(d.thumbnail)}
+                            alt=""
+                            className="w-10 h-10 rounded-lg object-cover flex-shrink-0 bg-muted"
+                            loading="lazy"
+                            referrerPolicy="no-referrer"
+                            onError={(e) => {
+                              (e.currentTarget as HTMLImageElement).style.visibility = "hidden";
+                            }}
+                          />
                         ) : (
                           <div className="w-10 h-10 rounded-lg bg-muted flex-shrink-0" />
                         )}
