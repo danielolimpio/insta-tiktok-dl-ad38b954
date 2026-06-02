@@ -9,6 +9,7 @@ import { VideoInfo } from "@/components/VideoCard";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
 import { RelatedTools } from "@/components/RelatedTools";
+import { proxyImage } from "@/lib/image-proxy";
 
 const HISTORY_KEY = "tikdown_history";
 
