@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { downloadMedia } from "@/lib/download-media";
+import { proxyImage } from "@/lib/image-proxy";
 
 export interface VideoInfo {
   id: string;
