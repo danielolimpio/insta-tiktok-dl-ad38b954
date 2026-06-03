@@ -89,13 +89,18 @@ export function AppSidebar() {
           href="https://batepapogratis.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center gap-2 group"
+          className="flex flex-col items-center gap-0 group"
           aria-label="Visite BatePapo Grátis"
         >
           <img
             src={batepapoLogo}
             alt="BatePapo Grátis"
-            className="h-12 w-auto object-contain group-hover:scale-105 transition-transform"
+            className="h-24 w-auto object-contain group-hover:scale-105 transition-transform"
+          />
+          <img
+            src={chatBubbles}
+            alt="Bate Papo"
+            className="h-16 w-auto object-contain -mt-2 group-hover:scale-105 transition-transform"
           />
           <img
             src={chatBubbles}
