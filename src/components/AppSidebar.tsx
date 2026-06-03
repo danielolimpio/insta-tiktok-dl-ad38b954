@@ -102,11 +102,6 @@ export function AppSidebar() {
             alt="Bate Papo"
             className="h-16 w-auto object-contain -mt-2 group-hover:scale-105 transition-transform"
           />
-          <img
-            src={chatBubbles}
-            alt="Bate Papo"
-            className="h-10 w-auto object-contain group-hover:scale-105 transition-transform"
-          />
         </a>
       </div>
       <div className="px-6 py-4 border-t border-sidebar-border">
