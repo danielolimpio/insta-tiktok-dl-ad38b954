@@ -56,15 +56,6 @@ export function Header() {
   return (
     <header className="sticky top-0 z-30 w-full h-14 flex items-center justify-end px-4 sm:px-8 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="flex items-center gap-2">
-        {/* FAQ */}
-        <button
-          onClick={() => navigate("/faq")}
-          className="w-10 h-10 rounded-xl flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-          title="FAQ"
-        >
-          <HelpCircle className="w-5 h-5" />
-        </button>
-
         {/* Dark/Light mode */}
         <button
           onClick={() => setDarkMode(!darkMode)}
