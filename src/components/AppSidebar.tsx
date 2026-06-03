@@ -84,7 +84,7 @@ export function AppSidebar() {
         ))}
       </nav>
 
-      <div className="px-6 pb-4">
+      <div className="px-6 pb-4 pt-4 border-t border-sidebar-border">
         <a
           href="https://batepapogratis.com/"
           target="_blank"
@@ -95,12 +95,12 @@ export function AppSidebar() {
           <img
             src={batepapoLogo}
             alt="BatePapo Grátis"
-            className="h-24 w-auto object-contain group-hover:scale-105 transition-transform"
+            className="h-28 w-auto object-contain group-hover:scale-105 transition-transform"
           />
           <img
             src={chatBubbles}
             alt="Bate Papo"
-            className="h-16 w-auto object-contain -mt-2 group-hover:scale-105 transition-transform"
+            className="h-16 w-auto object-contain -mt-4 group-hover:scale-105 transition-transform"
           />
         </a>
       </div>
