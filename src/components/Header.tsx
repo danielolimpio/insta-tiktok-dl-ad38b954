@@ -54,7 +54,8 @@ export function Header() {
   const count = downloads.length;
 
   return (
-    <header className="sticky top-0 z-30 w-full h-14 flex items-center justify-end px-4 sm:px-8 bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="sticky top-0 z-30 w-full h-14 flex items-center justify-between px-4 sm:px-8 bg-background/80 backdrop-blur-md border-b border-border">
+      <div />
       <div className="flex items-center gap-2">
         {/* Dark/Light mode */}
         <button
