@@ -84,18 +84,18 @@ export function AppSidebar() {
         ))}
       </nav>
 
-      <div className="p-6 border-t border-sidebar-border">
+      <div className="px-6 pb-4">
         <a
           href="https://batepapogratis.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 mb-3 group"
+          className="flex flex-col items-center gap-2 group"
           aria-label="Visite BatePapo Grátis"
         >
           <img
             src={batepapoLogo}
             alt="BatePapo Grátis"
-            className="h-10 w-auto object-contain group-hover:scale-105 transition-transform"
+            className="h-12 w-auto object-contain group-hover:scale-105 transition-transform"
           />
           <img
             src={chatBubbles}
@@ -103,6 +103,8 @@ export function AppSidebar() {
             className="h-10 w-auto object-contain group-hover:scale-105 transition-transform"
           />
         </a>
+      </div>
+      <div className="px-6 py-4 border-t border-sidebar-border">
         <p className="text-xs text-muted-foreground text-center">v1.0.0 • TikDown</p>
       </div>
     </div>
