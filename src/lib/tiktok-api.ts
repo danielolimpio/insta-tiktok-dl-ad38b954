@@ -12,6 +12,18 @@ export interface TikTokVideoData {
 
 const TIKWM_ORIGIN = "https://www.tikwm.com";
 
+async function fetchTikTokThumbnail(pageUrl: string) {
+  try {
+    const response = await fetch(`https://www.tiktok.com/oembed?url=${encodeURIComponent(pageUrl)}`);
+    if (!response.ok) return "";
+
+    const data = await response.json();
+    return typeof data.thumbnail_url === "string" ? data.thumbnail_url : "";
+  } catch {
+    return "";
+  }
+}
+
 function resolveTikWmUrl(url?: string) {
   if (!url) return "";
 
@@ -54,6 +66,7 @@ export async function fetchTikTokVideo(url: string): Promise<TikTokVideoData> {
   const durationStr = `${mins}:${secs.toString().padStart(2, "0")}`;
 
   const sizeMB = d.size ? (d.size / (1024 * 1024)).toFixed(1) + "MB" : "N/A";
+  const thumbnail = await fetchTikTokThumbnail(url);
 
   return {
     id: d.id || String(Date.now()),
@@ -61,7 +74,7 @@ export async function fetchTikTokVideo(url: string): Promise<TikTokVideoData> {
     author: d.author?.unique_id || d.author?.nickname || "unknown",
     duration: durationStr,
     size: sizeMB,
-    thumbnail: d.origin_cover || d.cover || "",
+    thumbnail: thumbnail || resolveTikWmUrl(d.origin_cover || d.cover || ""),
     downloadUrl: resolveTikWmUrl(d.play),
     downloadUrlHd: resolveTikWmUrl(d.hdplay || d.play),
     musicUrl: resolveTikWmUrl(d.music),

@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Bell, Sun, Moon } from "lucide-react";
 import { VideoInfo } from "@/components/VideoCard";
-import { proxyImage } from "@/lib/image-proxy";
 import { GoogleTranslate } from "@/components/GoogleTranslate";
+import { TikTokThumbnail } from "@/components/TikTokThumbnail";
 
 const HISTORY_KEY = "tikdown_history";
 
@@ -100,20 +100,15 @@ export function Header() {
                   <div className="divide-y divide-border">
                     {downloads.slice(0, 10).map((d) => (
                       <div key={d.id} className="p-3 flex items-center gap-3 hover:bg-muted/50 transition-colors">
-                        {d.thumbnail ? (
-                          <img
-                            src={proxyImage(d.thumbnail)}
-                            alt=""
-                            className="w-10 h-10 rounded-lg object-cover flex-shrink-0 bg-muted"
-                            loading="lazy"
-                            referrerPolicy="no-referrer"
-                            onError={(e) => {
-                              (e.currentTarget as HTMLImageElement).style.visibility = "hidden";
-                            }}
+                        <div className="w-10 h-10 rounded-lg bg-muted overflow-hidden flex-shrink-0">
+                          <TikTokThumbnail
+                            src={d.thumbnail}
+                            videoId={d.id}
+                            author={d.author}
+                            alt={d.title || "Vídeo TikTok"}
+                            iconClassName="w-4 h-4"
                           />
-                        ) : (
-                          <div className="w-10 h-10 rounded-lg bg-muted flex-shrink-0" />
-                        )}
+                        </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-xs text-foreground font-medium truncate">{d.title || "Vídeo TikTok"}</p>
                           <p className="text-[11px] text-muted-foreground">@{d.author || "unknown"}</p>

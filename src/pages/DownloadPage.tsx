@@ -9,7 +9,7 @@ import { VideoInfo } from "@/components/VideoCard";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
 import { RelatedTools } from "@/components/RelatedTools";
-import { proxyImage } from "@/lib/image-proxy";
+import { TikTokThumbnail } from "@/components/TikTokThumbnail";
 
 const HISTORY_KEY = "tikdown_history";
 
@@ -160,22 +160,12 @@ const DownloadPage = () => {
                     className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card hover:shadow-sm transition-shadow"
                   >
                     <div className="w-16 h-16 rounded-lg bg-muted overflow-hidden shrink-0">
-                      {video.thumbnail ? (
-                        <img
-                          src={proxyImage(video.thumbnail)}
-                          alt={video.title}
-                          className="w-full h-full object-cover"
-                          loading="lazy"
-                          referrerPolicy="no-referrer"
-                          onError={(e) => {
-                            (e.target as HTMLImageElement).style.display = "none";
-                          }}
-                        />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                          <Video className="w-6 h-6" />
-                        </div>
-                      )}
+                      <TikTokThumbnail
+                        src={video.thumbnail}
+                        videoId={video.id}
+                        author={video.author}
+                        alt={video.title}
+                      />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="text-sm font-semibold text-foreground line-clamp-1">{video.title}</h3>
