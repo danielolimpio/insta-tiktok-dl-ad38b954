@@ -10,7 +10,7 @@ export function proxyImage(url: string | undefined | null): string {
     // Already proxied or local
     if (url.startsWith("/") || url.includes("images.weserv.nl")) return url;
     const u = new URL(url);
-    if (u.hostname.includes("tikwm.com")) return url;
+    if (u.hostname.includes("tikwm.com") || u.hostname.includes("tiktokcdn")) return url;
     // weserv expects the URL without protocol
     const stripped = `${u.host}${u.pathname}${u.search}`;
     return `https://images.weserv.nl/?url=${encodeURIComponent(stripped)}`;
