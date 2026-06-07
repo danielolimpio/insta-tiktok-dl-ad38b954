@@ -37,16 +37,25 @@ export function TikTokThumbnail({
   const initialSrc = useMemo(() => proxyImage(src), [src]);
   const [imageSrc, setImageSrc] = useState(initialSrc);
   const [failed, setFailed] = useState(false);
+  const [triedFallback, setTriedFallback] = useState(false);
 
   useEffect(() => {
     setImageSrc(initialSrc);
     setFailed(false);
+    setTriedFallback(false);
   }, [initialSrc]);
 
   const loadFallback = async () => {
+    if (triedFallback) {
+      setFailed(true);
+      return;
+    }
+
+    setTriedFallback(true);
     const fallback = await fetchOEmbedThumbnail(videoId, author);
-    if (fallback && fallback !== imageSrc) {
-      setImageSrc(proxyImage(fallback));
+    const nextSrc = proxyImage(fallback);
+    if (nextSrc && nextSrc !== imageSrc) {
+      setImageSrc(nextSrc);
       setFailed(false);
       return;
     }
