@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { downloadMedia } from "@/lib/download-media";
-import { proxyImage } from "@/lib/image-proxy";
+import { TikTokThumbnail } from "@/components/TikTokThumbnail";
 
 export interface VideoInfo {
   id: string;
@@ -68,24 +68,13 @@ export function VideoCard({ video }: { video: VideoInfo }) {
       {/* Top row: thumbnail + info */}
       <div className="grid gap-4 sm:grid-cols-[140px_minmax(0,1fr)] sm:items-start">
         <div className="h-48 w-full overflow-hidden rounded-xl bg-muted sm:h-24 sm:w-[140px]">
-          {video.thumbnail ? (
-            <img
-              src={proxyImage(video.thumbnail)}
-              alt={video.title}
-              className="w-full h-full object-cover"
-              loading="lazy"
-              referrerPolicy="no-referrer"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-                target.parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center text-muted-foreground"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></div>';
-              }}
-            />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
-            </div>
-          )}
+          <TikTokThumbnail
+            src={video.thumbnail}
+            videoId={video.id}
+            author={video.author}
+            alt={video.title}
+            iconClassName="w-8 h-8"
+          />
         </div>
 
         <div className="min-w-0">
