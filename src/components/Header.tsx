@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Bell, Sun, Moon } from "lucide-react";
 import { VideoInfo } from "@/components/VideoCard";
-import { GoogleTranslate } from "@/components/GoogleTranslate";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { TikTokThumbnail } from "@/components/TikTokThumbnail";
 
 const HISTORY_KEY = "tikdown_history";
@@ -58,7 +58,7 @@ export function Header() {
       <div />
 
       <div className="flex items-center gap-2">
-        <GoogleTranslate />
+        <LanguageSwitcher current="pt" label="Idioma" />
 
         {/* Dark/Light mode */}
         <button
