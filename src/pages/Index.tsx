@@ -70,7 +70,6 @@ const Index = () => {
         <Header />
         <div className="border-b border-border bg-background/50">
           <div className="px-4 sm:px-8 py-2 flex justify-end">
-            <LanguageSwitcher current="pt" label={T.pt.switchLanguage} />
           </div>
         </div>
         <main className="flex-1 px-4 sm:px-8 py-8">

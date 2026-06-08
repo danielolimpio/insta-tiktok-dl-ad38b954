@@ -57,10 +57,9 @@ export function Header() {
     <header className="sticky top-0 z-30 w-full h-14 flex items-center justify-between px-4 sm:px-8 bg-background/80 backdrop-blur-md border-b border-border">
       <div />
 
-      {/* Translator — center */}
-      <GoogleTranslate />
-
       <div className="flex items-center gap-2">
+        <GoogleTranslate />
+
         {/* Dark/Light mode */}
         <button
           onClick={() => setDarkMode(!darkMode)}
