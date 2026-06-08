@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Bell, Sun, Moon } from "lucide-react";
 import { VideoInfo } from "@/components/VideoCard";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { TikTokThumbnail } from "@/components/TikTokThumbnail";
+import { LOCALES, DEFAULT_LOCALE, type Locale } from "@/i18n/config";
 
 const HISTORY_KEY = "tikdown_history";
 
@@ -18,6 +19,9 @@ function getRecentDownloads(): VideoInfo[] {
 
 export function Header() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const segment = location.pathname.split("/")[1] as Locale;
+  const currentLocale: Locale = (LOCALES as readonly string[]).includes(segment) ? segment : DEFAULT_LOCALE;
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("tikdown_theme") === "dark";
@@ -58,7 +62,7 @@ export function Header() {
       <div />
 
       <div className="flex items-center gap-2">
-        <LanguageSwitcher current="pt" label="Idioma" />
+        <LanguageSwitcher current={currentLocale} label="Idioma" />
 
         {/* Dark/Light mode */}
         <button
