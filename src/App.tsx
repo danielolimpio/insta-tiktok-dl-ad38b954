@@ -31,12 +31,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           
-          <Route path="/en" element={<LocalizedHomeRoute />} />
-          <Route path="/id" element={<LocalizedHomeRoute />} />
-          <Route path="/es" element={<LocalizedHomeRoute />} />
-          <Route path="/hi" element={<LocalizedHomeRoute />} />
-          <Route path="/tr" element={<LocalizedHomeRoute />} />
-          <Route path="/pt" element={<LocalizedHomeRoute />} />
+          <Route path="/:lang" element={<LocalizedHomeRoute />} />
           <Route path="/download" element={<DownloadPage />} />
           <Route path="/video" element={<VideoPage />} />
           <Route path="/audio" element={<AudioPage />} />
