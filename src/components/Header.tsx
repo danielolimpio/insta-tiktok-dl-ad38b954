@@ -19,6 +19,9 @@ function getRecentDownloads(): VideoInfo[] {
 
 export function Header() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const segment = location.pathname.split("/")[1] as Locale;
+  const currentLocale: Locale = (LOCALES as readonly string[]).includes(segment) ? segment : DEFAULT_LOCALE;
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("tikdown_theme") === "dark";
@@ -59,7 +62,7 @@ export function Header() {
       <div />
 
       <div className="flex items-center gap-2">
-        <LanguageSwitcher current="pt" label="Idioma" />
+        <LanguageSwitcher current={currentLocale} label="Idioma" />
 
         {/* Dark/Light mode */}
         <button
