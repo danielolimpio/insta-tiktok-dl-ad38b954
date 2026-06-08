@@ -58,7 +58,7 @@ export function Header() {
       <div />
 
       <div className="flex items-center gap-2">
-        <GoogleTranslate />
+        <LanguageSwitcher current="pt" label="Idioma" />
 
         {/* Dark/Light mode */}
         <button
