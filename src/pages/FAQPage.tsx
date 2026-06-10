@@ -3,6 +3,8 @@ import { Header } from "@/components/Header";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { JsonLd } from "@/components/JsonLd";
+import { PageBreadcrumbs } from "@/components/PageBreadcrumbs";
 import { HelpCircle, Search } from "lucide-react";
 import { useState } from "react";
 import {
@@ -78,10 +80,23 @@ const FAQPage = () => {
         canonical="https://baixarvideostiktok.com/faq"
         keywords="faq tiktok downloader, como baixar video tiktok, como remover marca d'agua tiktok, baixar audio tiktok mp3, tiktok download sem marca d'agua, save tiktok video"
       />
+      <JsonLd
+        id="faq-full-page"
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }}
+      />
       <AppSidebar />
       <div className="flex-1 lg:ml-[280px] flex flex-col">
         <Header />
         <main className="flex-1 px-4 sm:px-8 py-8">
+          <PageBreadcrumbs items={[{ name: "FAQ", url: "/faq" }]} />
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="text-center max-w-3xl mx-auto mb-10 pt-8 lg:pt-0">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tiktok-cyan/10 text-tiktok-cyan text-xs font-semibold mb-4">
               <HelpCircle className="w-3.5 h-3.5" />

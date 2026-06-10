@@ -9,6 +9,7 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { FAQSection } from "@/components/FAQSection";
 import { AdSenseContent } from "@/components/AdSenseContent";
 import { Footer } from "@/components/Footer";
+import { JsonLd } from "@/components/JsonLd";
 import { SEO, type HreflangAlternate } from "@/components/SEO";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { LOCALES, LOCALE_META, SITE_URL, localeUrl } from "@/i18n/config";
@@ -63,6 +64,33 @@ const Index = () => {
           ...LOCALES.map((l) => ({ hreflang: LOCALE_META[l].bcp47, href: localeUrl(l) })),
           { hreflang: "x-default", href: `${SITE_URL}/` },
         ] as HreflangAlternate[]}
+      />
+      <JsonLd
+        id="organization-home"
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "TikDown",
+          alternateName: "BaixarVideosTikTok",
+          url: "https://baixarvideostiktok.com/",
+          logo: "https://baixarvideostiktok.com/logo-splash.png",
+          sameAs: ["https://baixarvideostiktok.com/"],
+        }}
+      />
+      <JsonLd
+        id="website-home"
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "TikDown - Baixar Videos TikTok",
+          url: "https://baixarvideostiktok.com/",
+          inLanguage: "pt-BR",
+          potentialAction: {
+            "@type": "SearchAction",
+            target: "https://baixarvideostiktok.com/faq?q={search_term_string}",
+            "query-input": "required name=search_term_string",
+          },
+        }}
       />
       <AppSidebar />
 
