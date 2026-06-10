@@ -10,10 +10,12 @@ export function Footer() {
     <footer className="bg-tiktok-dark text-secondary-foreground mt-20">
       <div className="max-w-5xl mx-auto px-6 py-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-center md:text-left flex items-center gap-3 justify-center md:justify-start">
-            <img src={logo} alt="TikDown - Baixar Videos TikTok" className="w-8 h-8 rounded-lg" />
-            <h3 className="font-bold text-lg text-secondary-foreground">TikDown</h3>
-            <p className="text-xs text-muted-foreground mt-1">Baixar Videos TikTok • Sem Marca d'Água • Grátis</p>
+          <div className="flex items-center gap-3 justify-center md:justify-start">
+            <img src={logo} alt="TikDown - Baixar Videos TikTok" className="w-8 h-8 rounded-lg flex-shrink-0" />
+            <div className="text-center md:text-left">
+              <h3 className="font-bold text-sm text-secondary-foreground leading-tight">Baixar Videos TikTok</h3>
+              <p className="text-xs text-muted-foreground leading-tight">Sem Marca d'Água • Grátis</p>
+            </div>
           </div>
           <nav className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
             <Link to="/termos" className="hover:text-tiktok-cyan transition-colors">Termos de Uso</Link>
