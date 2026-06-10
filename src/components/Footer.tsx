@@ -17,7 +17,7 @@ export function Footer() {
               <p className="text-xs text-muted-foreground leading-tight">Sem Marca d'Água • Grátis</p>
             </div>
           </div>
-          <nav className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
+          <nav className="flex flex-nowrap justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground whitespace-nowrap">
             <Link to="/termos" className="hover:text-tiktok-cyan transition-colors">Termos de Uso</Link>
             <Link to="/privacidade" className="hover:text-tiktok-cyan transition-colors">Privacidade</Link>
             <Link to="/contato" className="hover:text-tiktok-cyan transition-colors">Contato</Link>
