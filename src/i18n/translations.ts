@@ -34,7 +34,7 @@ export const T: Record<Locale, Translation> = {
   en: {
     title: "TikTok Video Downloader – Download TikTok Without Watermark",
     description: "Free TikTok video downloader. Download TikTok to MP4 HD without watermark. Online, fast, no app, no login.",
-    keywords: "tiktok video downloader, download tiktok without watermark, tiktok to mp4, tiktok mp4 hd",
+    keywords: "tiktok video downloader, download tiktok without watermark, tiktok mp4 hd, tiktok to mp3, save tiktok video, snaptik alternative, tiktok downloader online, tiktok no watermark, download tiktok pc, download tiktok iphone, download tiktok android, tiktok 1080p downloader, ssstik alternative",
     heroBadge: "Free TikTok Downloader",
     heroTitle: "TikTok Video Downloader",
     heroTitleAccent: "Without Watermark",
@@ -74,7 +74,7 @@ export const T: Record<Locale, Translation> = {
   id: {
     title: "Download Video TikTok Tanpa Watermark – MP4 HD Gratis",
     description: "Download video TikTok tanpa watermark dalam MP4 HD. Pengunduh TikTok online gratis tanpa aplikasi.",
-    keywords: "download video tiktok, tiktok tanpa watermark, pengunduh tiktok, tiktok mp4 hd",
+    keywords: "download video tiktok, tiktok tanpa watermark, download tiktok mp4, download tiktok mp3, simpan video tiktok, tiktok downloader gratis, download tiktok hd, download tiktok pc, download tiktok iphone, download tiktok android, snaptik, ssstik, savetik, tiktok no watermark indonesia",
     heroBadge: "Pengunduh TikTok Gratis",
     heroTitle: "Download Video TikTok",
     heroTitleAccent: "Tanpa Watermark",
@@ -114,7 +114,7 @@ export const T: Record<Locale, Translation> = {
   pt: {
     title: "Baixar Vídeo TikTok Sem Marca D'Água | MP4 HD Grátis",
     description: "Baixar vídeo TikTok sem marca d'água em MP4 HD. Download TikTok online, grátis, sem app.",
-    keywords: "baixar vídeo tiktok, baixar tiktok sem marca d'água, download tiktok mp4, tiktok hd",
+    keywords: "baixar video tiktok, baixar tiktok sem marca d'agua, baixar tiktok mp4, baixar audio tiktok mp3, salvar video do tiktok, baixar tiktok hd 1080p, baixar tiktok no pc, baixar tiktok no iphone, baixar tiktok no android, tiktok downloader, remover marca d'agua tiktok, snaptik, ssstik, baixar tiktok online gratis",
     heroBadge: "Baixar TikTok Grátis",
     heroTitle: "Baixar Vídeo TikTok",
     heroTitleAccent: "Sem Marca D'Água",
@@ -154,7 +154,7 @@ export const T: Record<Locale, Translation> = {
   es: {
     title: "Descargar Video TikTok Sin Marca de Agua – MP4 HD Gratis",
     description: "Descargar video TikTok sin marca de agua en MP4 HD. Descargador online gratis, sin app.",
-    keywords: "descargar video tiktok, tiktok sin marca de agua, descargar tiktok mp4, tiktok hd",
+    keywords: "descargar video tiktok, tiktok sin marca de agua, descargar tiktok mp4, descargar audio tiktok mp3, guardar video tiktok, descargar tiktok hd 1080p, descargar tiktok pc, descargar tiktok iphone, descargar tiktok android, tiktok downloader, bajar videos de tiktok, snaptik, ssstik, descargar tiktok gratis online",
     heroBadge: "Descargador TikTok Gratis",
     heroTitle: "Descargar Video TikTok",
     heroTitleAccent: "Sin Marca de Agua",
@@ -194,7 +194,7 @@ export const T: Record<Locale, Translation> = {
   ur: {
     title: "ٹک ٹاک ویڈیو ڈاؤن لوڈ کریں – واٹر مارک کے بغیر MP4 HD مفت",
     description: "ٹک ٹاک ویڈیو واٹر مارک کے بغیر MP4 HD میں ڈاؤن لوڈ کریں۔ مفت آن لائن ٹک ٹاک ڈاؤن لوڈر۔",
-    keywords: "ٹک ٹاک ڈاؤن لوڈ, واٹر مارک کے بغیر ٹک ٹاک, ٹک ٹاک mp4",
+    keywords: "ٹک ٹاک ویڈیو ڈاؤن لوڈ, واٹر مارک کے بغیر ٹک ٹاک, tiktok download pakistan, tiktok mp4 download, tiktok mp3 download, ٹک ٹاک آڈیو ڈاؤن لوڈ, tiktok video save, snaptik urdu, ٹک ٹاک HD ڈاؤن لوڈ, tiktok downloader online free",
     heroBadge: "مفت ٹک ٹاک ڈاؤن لوڈر",
     heroTitle: "ٹک ٹاک ویڈیو ڈاؤن لوڈ",
     heroTitleAccent: "واٹر مارک کے بغیر",
@@ -234,7 +234,7 @@ export const T: Record<Locale, Translation> = {
   fil: {
     title: "TikTok Video Downloader – I-download ang TikTok Walang Watermark",
     description: "Libreng TikTok downloader. I-download ang TikTok sa MP4 HD nang walang watermark.",
-    keywords: "tiktok downloader, download tiktok walang watermark, tiktok mp4",
+    keywords: "tiktok downloader philippines, download tiktok walang watermark, i-download ang tiktok, tiktok mp4 download, tiktok mp3, save tiktok video philippines, tiktok hd download, snaptik tagalog, libreng tiktok downloader, tiktok video saver",
     heroBadge: "Libreng TikTok Downloader",
     heroTitle: "TikTok Video Downloader",
     heroTitleAccent: "Walang Watermark",
@@ -274,7 +274,7 @@ export const T: Record<Locale, Translation> = {
   ru: {
     title: "Скачать видео TikTok без водяного знака – MP4 HD бесплатно",
     description: "Бесплатный загрузчик TikTok. Скачивайте видео TikTok в MP4 HD без водяного знака.",
-    keywords: "скачать tiktok, тикток без водяного знака, tiktok mp4",
+    keywords: "скачать тикток, тикток без водяного знака, скачать видео tiktok, скачать tiktok mp4, скачать звук tiktok mp3, сохранить видео тикток, тикток hd 1080p, скачать тикток на пк, скачать тикток на айфон, скачать тикток на андроид, snaptik, ssstik, загрузчик тикток бесплатно",
     heroBadge: "Бесплатный загрузчик TikTok",
     heroTitle: "Скачать видео TikTok",
     heroTitleAccent: "Без водяного знака",
@@ -314,7 +314,7 @@ export const T: Record<Locale, Translation> = {
   bn: {
     title: "টিকটক ভিডিও ডাউনলোড – ওয়াটারমার্ক ছাড়া MP4 HD ফ্রি",
     description: "ওয়াটারমার্ক ছাড়া MP4 HD-তে টিকটক ভিডিও ডাউনলোড করুন। ফ্রি অনলাইন টিকটক ডাউনলোডার।",
-    keywords: "টিকটক ডাউনলোড, ওয়াটারমার্ক ছাড়া টিকটক, tiktok mp4",
+    keywords: "টিকটক ভিডিও ডাউনলোড, ওয়াটারমার্ক ছাড়া টিকটক, tiktok download bangla, tiktok mp4 download, tiktok mp3 download, টিকটক অডিও ডাউনলোড, টিকটক HD ডাউনলোড, snaptik bangla, ফ্রি টিকটক ডাউনলোডার, টিকটক ভিডিও সেভ",
     heroBadge: "ফ্রি টিকটক ডাউনলোডার",
     heroTitle: "টিকটক ভিডিও ডাউনলোড",
     heroTitleAccent: "ওয়াটারমার্ক ছাড়া",
@@ -354,7 +354,7 @@ export const T: Record<Locale, Translation> = {
   ar: {
     title: "تحميل فيديو تيك توك بدون علامة مائية – MP4 HD مجاناً",
     description: "حمّل فيديوهات تيك توك بدون علامة مائية بصيغة MP4 HD. مُحمِّل تيك توك مجاني عبر الإنترنت.",
-    keywords: "تحميل تيك توك, تيك توك بدون علامة مائية, tiktok mp4",
+    keywords: "تحميل فيديو تيك توك, تيك توك بدون علامة مائية, تنزيل تيك توك mp4, تحميل صوت تيك توك mp3, حفظ فيديو تيك توك, تحميل تيك توك HD, تحميل تيك توك للكمبيوتر, تحميل تيك توك للايفون, تحميل تيك توك للاندرويد, snaptik, محمل تيك توك مجاني, tiktok downloader arabic",
     heroBadge: "مُحمِّل تيك توك مجاني",
     heroTitle: "تحميل فيديو تيك توك",
     heroTitleAccent: "بدون علامة مائية",
@@ -394,7 +394,7 @@ export const T: Record<Locale, Translation> = {
   vi: {
     title: "Tải video TikTok không logo – MP4 HD miễn phí",
     description: "Tải video TikTok không logo ở định dạng MP4 HD. Trình tải TikTok trực tuyến miễn phí.",
-    keywords: "tải tiktok, tiktok không logo, tiktok mp4",
+    keywords: "tải video tiktok, tải tiktok không logo, tải tiktok mp4, tải nhạc tiktok mp3, lưu video tiktok, tải tiktok hd 1080p, tải tiktok về máy tính, tải tiktok về iphone, tải tiktok về android, snaptik, ssstik, trình tải tiktok miễn phí, tiktok downloader vietnam",
     heroBadge: "Trình tải TikTok miễn phí",
     heroTitle: "Tải video TikTok",
     heroTitleAccent: "Không logo",
