@@ -2,8 +2,11 @@ import { Header } from "@/components/Header";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { JsonLd } from "@/components/JsonLd";
+import { PageBreadcrumbs } from "@/components/PageBreadcrumbs";
 import { motion } from "framer-motion";
 import { Users, Target, Heart, Zap, Globe, Award } from "lucide-react";
+import heroImg from "@/assets/hero-tiktok.webp";
 import heroImg from "@/assets/hero-tiktok.webp";
 
 const AboutPage = () => {
