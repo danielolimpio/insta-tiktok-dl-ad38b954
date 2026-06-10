@@ -9,6 +9,7 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { FAQSection } from "@/components/FAQSection";
 import { AdSenseContent } from "@/components/AdSenseContent";
 import { Footer } from "@/components/Footer";
+import { JsonLd } from "@/components/JsonLd";
 import { SEO, type HreflangAlternate } from "@/components/SEO";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { LOCALES, LOCALE_META, SITE_URL, localeUrl } from "@/i18n/config";
