@@ -18,11 +18,34 @@ const AboutPage = () => {
         canonical="https://baixarvideostiktok.com/sobre"
         keywords="sobre tiktok downloader, baixarvideostiktok, baixar video tiktok, tiktok video downloader, salvar video do tiktok, remover marca d'agua tiktok, baixar audio tiktok"
       />
+      <JsonLd
+        id="organization-about"
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "TikDown",
+          alternateName: "BaixarVideosTikTok",
+          url: "https://baixarvideostiktok.com/",
+          logo: "https://baixarvideostiktok.com/logo-splash.png",
+          description: "Baixador online de vídeos do TikTok sem marca d'água em MP4 HD e MP3.",
+        }}
+      />
+      <JsonLd
+        id="website-about"
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "TikDown - Baixar Videos TikTok",
+          url: "https://baixarvideostiktok.com/",
+          inLanguage: "pt-BR",
+        }}
+      />
       <AppSidebar />
       <div className="flex-1 lg:ml-[280px] flex flex-col">
         <Header />
         <main className="flex-1 px-4 sm:px-8 py-8">
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl mx-auto pt-8 lg:pt-0">
+            <PageBreadcrumbs items={[{ name: "Sobre", url: "/sobre" }]} />
             <div className="text-center mb-12">
               <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground">
                 Sobre o <span className="text-gradient-tiktok">BaixarVideosTikTok.com</span>
