@@ -16,16 +16,28 @@ const externalSites = [
   { label: "Baixar Facebook", url: "https://baixarvideosfacebook.com", logo: logoFacebook, color: "from-blue-600 to-blue-800" },
   { label: "Baixar Youtube", url: "https://baixarvideoyoutube.com", logo: logoYoutube, color: "from-red-600 to-red-800" },
   { label: "Baixar Kwai", url: "https://baixarvideoskwai.com", logo: logoKwai, color: "from-orange-500 to-red-500" },
-];
-
 export function AppSidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
+  const segment = location.pathname.split("/")[1] as Locale;
+  const currentLocale: Locale = (LOCALES as readonly string[]).includes(segment) ? segment : DEFAULT_LOCALE;
+  const homePath = localePath(currentLocale);
+
+  const navItems = [
+    { label: "Início", icon: Home, path: homePath },
+    { label: "Baixar Vídeo MP4", icon: Video, path: "/video" },
+    { label: "Baixar Áudio MP3", icon: Music, path: "/audio" },
+    { label: "Histórico", icon: Download, path: "/download" },
+    { label: "Configurações", icon: Settings, path: "/configuracoes" },
+    { label: "Ajuda e Suporte", icon: HelpCircle, path: "/ajuda" },
+    { label: "FAQ", icon: MessageCircleQuestion, path: "/faq" },
+  ];
+
   const sidebar = (
     <div className="flex flex-col h-full bg-tiktok-black text-sidebar-foreground">
-      <div className="p-6 flex items-center gap-3 cursor-pointer" onClick={() => { navigate("/"); setMobileOpen(false); }}>
+      <div className="p-6 flex items-center gap-3 cursor-pointer" onClick={() => { navigate(homePath); setMobileOpen(false); }}>
         <img src={logo} alt="TikDown" className="w-10 h-10 rounded-xl object-cover" />
         <div>
           <h1 className="text-lg font-bold text-sidebar-foreground">TikDown</h1>
