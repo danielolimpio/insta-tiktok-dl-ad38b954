@@ -9,16 +9,7 @@ import logoYoutube from "@/assets/logo-youtube.png";
 import logoKwai from "@/assets/logo-kwai.png";
 import batepapoLogo from "@/assets/batepapo-logo.png";
 import chatBubbles from "@/assets/chat-bubbles.gif";
-
-const navItems = [
-  { label: "Início", icon: Home, path: "/" },
-  { label: "Baixar Vídeo MP4", icon: Video, path: "/video" },
-  { label: "Baixar Áudio MP3", icon: Music, path: "/audio" },
-  { label: "Histórico", icon: Download, path: "/download" },
-  { label: "Configurações", icon: Settings, path: "/configuracoes" },
-  { label: "Ajuda e Suporte", icon: HelpCircle, path: "/ajuda" },
-  { label: "FAQ", icon: MessageCircleQuestion, path: "/faq" },
-];
+import { LOCALES, DEFAULT_LOCALE, localePath, type Locale } from "@/i18n/config";
 
 const externalSites = [
   { label: "Baixar Instagram", url: "https://baixarvideosinstagram.com", logo: logoInstagram, color: "from-pink-500 to-purple-600" },
