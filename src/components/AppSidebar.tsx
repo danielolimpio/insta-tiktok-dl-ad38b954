@@ -16,6 +16,8 @@ const externalSites = [
   { label: "Baixar Facebook", url: "https://baixarvideosfacebook.com", logo: logoFacebook, color: "from-blue-600 to-blue-800" },
   { label: "Baixar Youtube", url: "https://baixarvideoyoutube.com", logo: logoYoutube, color: "from-red-600 to-red-800" },
   { label: "Baixar Kwai", url: "https://baixarvideoskwai.com", logo: logoKwai, color: "from-orange-500 to-red-500" },
+];
+
 export function AppSidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
