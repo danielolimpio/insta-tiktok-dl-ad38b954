@@ -130,12 +130,7 @@ const LocalizedHome = ({ locale }: LocalizedHomeProps) => {
       <div className="flex-1 lg:ml-[280px] flex flex-col">
         <Header />
 
-        {/* Language Switcher Bar */}
-        <div className="border-b border-border bg-background/50">
-          <div className="px-4 sm:px-8 py-2 flex justify-end">
-            <LanguageSwitcher current={locale} label={t.switchLanguage} />
-          </div>
-        </div>
+
 
         <main className="flex-1 px-4 sm:px-8 py-8">
           {/* Hero */}
