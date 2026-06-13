@@ -9,16 +9,7 @@ import logoYoutube from "@/assets/logo-youtube.png";
 import logoKwai from "@/assets/logo-kwai.png";
 import batepapoLogo from "@/assets/batepapo-logo.png";
 import chatBubbles from "@/assets/chat-bubbles.gif";
-
-const navItems = [
-  { label: "Início", icon: Home, path: "/" },
-  { label: "Baixar Vídeo MP4", icon: Video, path: "/video" },
-  { label: "Baixar Áudio MP3", icon: Music, path: "/audio" },
-  { label: "Histórico", icon: Download, path: "/download" },
-  { label: "Configurações", icon: Settings, path: "/configuracoes" },
-  { label: "Ajuda e Suporte", icon: HelpCircle, path: "/ajuda" },
-  { label: "FAQ", icon: MessageCircleQuestion, path: "/faq" },
-];
+import { LOCALES, DEFAULT_LOCALE, localePath, type Locale } from "@/i18n/config";
 
 const externalSites = [
   { label: "Baixar Instagram", url: "https://baixarvideosinstagram.com", logo: logoInstagram, color: "from-pink-500 to-purple-600" },
@@ -32,9 +23,23 @@ export function AppSidebar() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const segment = location.pathname.split("/")[1] as Locale;
+  const currentLocale: Locale = (LOCALES as readonly string[]).includes(segment) ? segment : DEFAULT_LOCALE;
+  const homePath = localePath(currentLocale);
+
+  const navItems = [
+    { label: "Início", icon: Home, path: homePath },
+    { label: "Baixar Vídeo MP4", icon: Video, path: "/video" },
+    { label: "Baixar Áudio MP3", icon: Music, path: "/audio" },
+    { label: "Histórico", icon: Download, path: "/download" },
+    { label: "Configurações", icon: Settings, path: "/configuracoes" },
+    { label: "Ajuda e Suporte", icon: HelpCircle, path: "/ajuda" },
+    { label: "FAQ", icon: MessageCircleQuestion, path: "/faq" },
+  ];
+
   const sidebar = (
     <div className="flex flex-col h-full bg-tiktok-black text-sidebar-foreground">
-      <div className="p-6 flex items-center gap-3 cursor-pointer" onClick={() => { navigate("/"); setMobileOpen(false); }}>
+      <div className="p-6 flex items-center gap-3 cursor-pointer" onClick={() => { navigate(homePath); setMobileOpen(false); }}>
         <img src={logo} alt="TikDown" className="w-10 h-10 rounded-xl object-cover" />
         <div>
           <h1 className="text-lg font-bold text-sidebar-foreground">TikDown</h1>
