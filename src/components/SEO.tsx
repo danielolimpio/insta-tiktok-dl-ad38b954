@@ -14,6 +14,8 @@ interface SEOProps {
   ogImage?: string;
   ogLocale?: string;
   htmlLang?: string;
+  /** Robots directive, e.g. "noindex, follow". Defaults to leaving the sitewide index.html value untouched. */
+  robots?: string;
   /** Hreflang alternates including x-default. Self-referencing entry is allowed and recommended. */
   alternates?: HreflangAlternate[];
 }
@@ -70,6 +72,7 @@ export function SEO({
   ogImage,
   ogLocale,
   htmlLang,
+  robots,
   alternates,
 }: SEOProps) {
   useEffect(() => {
@@ -85,6 +88,7 @@ export function SEO({
     setMeta("twitter:title", title);
     setMeta("twitter:description", description);
     setMeta("twitter:image", ogImage ?? "", "name");
+    if (robots) setMeta("robots", robots);
     if (canonical) {
       setCanonical(canonical);
       setMeta("og:url", canonical, "property");
@@ -94,7 +98,7 @@ export function SEO({
     if (alternates && alternates.length > 0) {
       setAlternates(alternates);
     }
-  }, [title, description, canonical, keywords, ogType, ogImage, ogLocale, htmlLang, alternates]);
+  }, [title, description, canonical, keywords, ogType, ogImage, ogLocale, htmlLang, robots, alternates]);
 
   return null;
 }

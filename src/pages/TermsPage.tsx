@@ -12,6 +12,7 @@ const TermsPage = () => {
         title="Termos de Uso | TikDown TikTok Downloader"
         description="Leia os termos de uso do TikDown, o baixador de vídeos do TikTok gratuito. Regras, direitos autorais e responsabilidades ao baixar conteúdo."
         canonical="https://baixarvideostiktok.com/termos"
+        robots="noindex, follow"
       />
       <AppSidebar />
       <div className="flex-1 lg:ml-[280px] flex flex-col">
