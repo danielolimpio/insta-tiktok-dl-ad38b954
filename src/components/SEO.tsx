@@ -72,6 +72,7 @@ export function SEO({
   ogImage,
   ogLocale,
   htmlLang,
+  robots,
   alternates,
 }: SEOProps) {
   useEffect(() => {
@@ -87,6 +88,7 @@ export function SEO({
     setMeta("twitter:title", title);
     setMeta("twitter:description", description);
     setMeta("twitter:image", ogImage ?? "", "name");
+    if (robots) setMeta("robots", robots);
     if (canonical) {
       setCanonical(canonical);
       setMeta("og:url", canonical, "property");
@@ -96,7 +98,7 @@ export function SEO({
     if (alternates && alternates.length > 0) {
       setAlternates(alternates);
     }
-  }, [title, description, canonical, keywords, ogType, ogImage, ogLocale, htmlLang, alternates]);
+  }, [title, description, canonical, keywords, ogType, ogImage, ogLocale, htmlLang, robots, alternates]);
 
   return null;
 }
