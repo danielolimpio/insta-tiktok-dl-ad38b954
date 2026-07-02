@@ -12,6 +12,7 @@ const PrivacyPage = () => {
         title="Política de Privacidade | TikDown"
         description="Saiba como o TikDown protege seus dados ao usar nosso TikTok downloader. Não coletamos dados pessoais nem armazenamos os vídeos baixados."
         canonical="https://baixarvideostiktok.com/privacidade"
+        robots="noindex, follow"
       />
       <AppSidebar />
       <div className="flex-1 lg:ml-[280px] flex flex-col">

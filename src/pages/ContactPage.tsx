@@ -30,6 +30,7 @@ const ContactPage = () => {
         title="Contato | TikDown TikTok Downloader"
         description="Fale com a equipe do TikDown. Envie dúvidas, sugestões ou parcerias sobre o nosso TikTok downloader gratuito para baixar vídeos sem marca d'água."
         canonical="https://baixarvideostiktok.com/contato"
+        robots="noindex, follow"
       />
       <AppSidebar />
       <div className="flex-1 lg:ml-[280px] flex flex-col">

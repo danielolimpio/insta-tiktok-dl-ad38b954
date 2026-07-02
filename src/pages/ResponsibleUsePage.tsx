@@ -76,6 +76,7 @@ const ResponsibleUsePage = () => {
         title="Uso Responsável | TikDown TikTok Downloader"
         description="Diretrizes de uso responsável do TikDown: respeite direitos autorais, créditos dos criadores e a política do TikTok ao baixar vídeos."
         canonical="https://baixarvideostiktok.com/uso-responsavel"
+        robots="noindex, follow"
       />
       <AppSidebar />
       <div className="flex-1 lg:ml-[280px] flex flex-col">
