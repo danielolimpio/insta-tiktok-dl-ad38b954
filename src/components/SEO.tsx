@@ -14,6 +14,8 @@ interface SEOProps {
   ogImage?: string;
   ogLocale?: string;
   htmlLang?: string;
+  /** Robots directive, e.g. "noindex, follow". Defaults to leaving the sitewide index.html value untouched. */
+  robots?: string;
   /** Hreflang alternates including x-default. Self-referencing entry is allowed and recommended. */
   alternates?: HreflangAlternate[];
 }
