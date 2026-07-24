@@ -14,13 +14,6 @@ export function setupAutoInstallPrompt() {
   // Do not register an app-shell service worker here. A previous SW caused
   // first-load stale HTML/CSS and broken image requests. Manifest metadata is
   // kept for home-screen support, while any old app SW is removed.
-  const isInIframe = (() => {
-    try {
-      return window.self !== window.top;
-    } catch {
-      return true;
-    }
-  })();
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.getRegistrations().then((regs) => {
       regs.forEach((r) => {
