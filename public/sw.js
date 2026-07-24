@@ -1,25 +1,28 @@
-// Minimal, non-intrusive service worker.
-// Purpose: satisfy PWA install-prompt eligibility on Chrome/Edge WITHOUT
-// intercepting any network request. Intercepting caused broken images on
-// first load (favicon + TikTok thumbnails) because clients.claim() + a
-// respondWith fetch handler re-issued in-flight requests through the SW
-// context, losing referrer/credentials and failing cross-origin fetches.
-const SW_VERSION = "v3-passthrough";
+// Kill-switch service worker.
+// Previous versions could keep serving stale HTML/assets on a first visit,
+// causing the app to appear unstyled and images to break until a refresh.
+// This worker clears the app-shell caches, refreshes open pages, then removes
+// itself so future loads go directly to the network/browser cache.
+function isAppCacheForThisRegistration(name) {
+  const appCachePattern = /(^|-)precache-v\d+-|(^|-)runtime-|(^|-)googleAnalytics-|tikdown|vite|workbox/i;
+  return appCachePattern.test(name);
+}
 
-self.addEventListener("install", () => {
-  // Activate as soon as it's installed, but do NOT claim existing clients —
-  // the current page keeps using the network directly until the next reload.
-  self.skipWaiting();
-});
+self.addEventListener("install", () => self.skipWaiting());
 
 self.addEventListener("activate", (event) => {
-  // Clean up any legacy caches from older SW versions.
   event.waitUntil(
-    caches.keys().then((keys) => Promise.all(keys.map((k) => caches.delete(k))))
+    (async () => {
+      try {
+        const cacheNames = await caches.keys();
+        const appCaches = cacheNames.filter(isAppCacheForThisRegistration);
+        await Promise.allSettled(appCaches.map((name) => caches.delete(name)));
+        await self.clients.claim();
+        const windowClients = await self.clients.matchAll({ type: "window" });
+        await Promise.allSettled(windowClients.map((client) => client.navigate(client.url)));
+      } finally {
+        await self.registration.unregister();
+      }
+    })(),
   );
 });
-
-// Empty fetch listener: presence is enough for install-prompt heuristics on
-// older Chrome; we deliberately do NOT call event.respondWith so the browser
-// handles every request natively (correct referrer, cookies, CORS, cache).
-self.addEventListener("fetch", () => {});
