@@ -37,23 +37,25 @@ export function TikTokThumbnail({
   const initialSrc = useMemo(() => proxyImage(src), [src]);
   const [imageSrc, setImageSrc] = useState(initialSrc);
   const [failed, setFailed] = useState(false);
-  const [triedFallback, setTriedFallback] = useState(false);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     setImageSrc(initialSrc);
     setFailed(false);
-    setTriedFallback(false);
+    setAttempt(0);
   }, [initialSrc]);
 
   const loadFallback = async () => {
-    if (triedFallback) {
+    if (attempt >= 2) {
       setFailed(true);
       return;
     }
 
-    setTriedFallback(true);
-    const fallback = await fetchOEmbedThumbnail(videoId, author);
-    const nextSrc = proxyImage(fallback);
+    const nextAttempt = attempt + 1;
+    setAttempt(nextAttempt);
+
+    const fallback = nextAttempt === 1 ? await fetchOEmbedThumbnail(videoId, author) : src;
+    const nextSrc = proxyImage(fallback ? `${fallback}${fallback.includes("?") ? "&" : "?"}retry=${Date.now()}` : "");
     if (nextSrc && nextSrc !== imageSrc) {
       setImageSrc(nextSrc);
       setFailed(false);
