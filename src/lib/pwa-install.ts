@@ -11,8 +11,9 @@ const STORAGE_KEY = "pwa-install-prompted";
 export function setupAutoInstallPrompt() {
   if (typeof window === "undefined") return;
 
-  // Register a minimal service worker so Chrome/Edge fire beforeinstallprompt.
-  // Skip in iframes / Lovable preview to avoid caching issues.
+  // Do not register an app-shell service worker here. A previous SW caused
+  // first-load stale HTML/CSS and broken image requests. Manifest metadata is
+  // kept for home-screen support, while any old app SW is removed.
   const isInIframe = (() => {
     try {
       return window.self !== window.top;
@@ -20,21 +21,12 @@ export function setupAutoInstallPrompt() {
       return true;
     }
   })();
-  const isPreviewHost =
-    window.location.hostname.includes("lovableproject.com") ||
-    window.location.hostname.includes("lovable.app") ||
-    window.location.hostname.includes("id-preview--");
-
   if ("serviceWorker" in navigator) {
-    if (isInIframe || isPreviewHost) {
-      navigator.serviceWorker.getRegistrations().then((regs) => {
-        regs.forEach((r) => r.unregister());
+    navigator.serviceWorker.getRegistrations().then((regs) => {
+      regs.forEach((r) => {
+        if (!isInIframe) void r.unregister();
       });
-    } else {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("/sw.js").catch(() => {});
-      });
-    }
+    });
   }
 
   let deferredPrompt: BeforeInstallPromptEvent | null = null;
