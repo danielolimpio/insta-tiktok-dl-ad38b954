@@ -24,7 +24,7 @@ export function setupAutoInstallPrompt() {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.getRegistrations().then((regs) => {
       regs.forEach((r) => {
-        if (!isInIframe) void r.unregister();
+        void r.unregister();
       });
     });
   }
