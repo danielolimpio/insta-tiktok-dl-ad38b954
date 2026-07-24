@@ -7,15 +7,12 @@
 //   - hreflang <link rel="alternate"> entries
 //   - og:title / og:description / og:url / og:locale
 //   - twitter title/description
-//   - <noscript> fallback (crawlers/users with JS disabled)
-//   - Rich semantic HTML placed INSIDE <div id="root"> so Googlebot's
-//     first (pre-JS-execution) pass already sees a real H1, intro,
-//     features list, how-it-works steps, mini-FAQ and internal links.
+//   - <noscript> fallback for users/crawlers without JavaScript.
 //
 // The SPA still hydrates on top identically: main.tsx uses createRoot()
 // (not hydrateRoot), which REPLACES the contents of #root when React
-// mounts. This means the pre-render is 100% safe for the visible UI —
-// users never see the SSR shell, only the fully-styled React app.
+// mounts. The visible UI remains the fully-styled React app; SEO fallback
+// content is kept inside <noscript> only to avoid first-load layout flashes.
 
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { resolve, dirname } from "node:path";
@@ -671,11 +668,9 @@ function replaceOrInsert(html, regex, replacement, fallbackAfter) {
 }
 
 /**
- * Build the pre-render SEO shell that will live INSIDE #root until React
- * mounts. Uses semantic HTML (h1/h2/section/ul/ol/nav) with inline styles
- * that make the content render sensibly even before Tailwind CSS loads.
- * When React's createRoot() runs on #root, this block is fully replaced —
- * users see the real UI, crawlers had already indexed real content.
+ * Build the pre-render SEO shell used only inside <noscript>. Keeping this
+ * outside #root prevents first-time visitors from seeing an unstyled SEO shell
+ * while JS/CSS assets are still being downloaded or replaced from cache.
  */
 function buildInRootShell(route) {
   const S = {
@@ -834,19 +829,14 @@ function transformHtml(template, route) {
     (m) => `${m}\n${buildHreflangLinks()}${buildFaqJsonLd(route)}`
   );
 
-  // Rich SEO shell INSIDE #root — React will replace on mount.
-  const shell = buildInRootShell(route);
+  // Keep #root empty so users never see an unstyled static shell before React.
   html = html.replace(
     /<div\s+id=["']root["'][^>]*>[\s\S]*?<\/div>/i,
-    `<div id="root">${shell}</div>`
+    `<div id="root"></div>`
   );
 
-  // Minimal <noscript> fallback for absolute-no-JS crawlers/users.
-  const noscript = `<noscript><div style="max-width:720px;margin:2rem auto;padding:1rem;font-family:system-ui,sans-serif;color:#111;background:#fff;"><h2>${escapeHtml(
-    route.h1
-  )}</h2><p>${escapeHtml(
-    route.intro
-  )}</p><p><a href="${SITE_URL}${route.path}">${escapeHtml(canonical)}</a></p></div></noscript>`;
+  // Semantic fallback for absolute-no-JS crawlers/users.
+  const noscript = `<noscript>${buildInRootShell(route)}</noscript>`;
   html = html.replace(/<body([^>]*)>/i, `<body$1>${noscript}`);
 
   return html;
