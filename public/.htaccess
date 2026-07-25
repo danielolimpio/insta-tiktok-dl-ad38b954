@@ -1,3 +1,9 @@
+# Disable Apache's automatic trailing-slash redirect on directories.
+# Without this, /en (a prerendered dir with index.html) 301s to /en/,
+# and rule below strips it back to /en → infinite redirect loop.
+DirectorySlash Off
+Options -MultiViews
+
 RewriteEngine On
 RewriteBase /
 
@@ -9,13 +15,17 @@ RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# 3. Remove trailing slash (except root)
+# 3. Remove trailing slash (except root and real files) — only when not a directory
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} (.+)/$
-RewriteRule ^(.*)/$ /$1 [L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} ^(.+)/$
+RewriteRule ^(.+)/$ /$1 [L,R=301]
 
+# 4. Serve prerendered /route/index.html for pretty URLs like /en, /faq, /video
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.+[^/])$ /$1/index.html [L]
 
-# 5. SPA fallback - serve index.html for client-side routes
+# 5. SPA fallback - serve root index.html for unknown client-side routes
 RewriteRule ^index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -26,7 +36,7 @@ RewriteRule . /index.html [L]
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
-  <FilesMatch "^(index\.html|manifest\.json|sw\.js)$">
+  <FilesMatch "^(index\.html|manifest\.json|sw\.js|robots\.txt|sitemap\.xml)$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
     Header set Pragma "no-cache"
     Header set Expires "0"
